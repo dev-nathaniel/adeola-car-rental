@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+button {
+    -webkit-appearance: none;
+    background-color: none;
+}

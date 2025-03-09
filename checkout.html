@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="./src/checkout.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="w-full py-4 px-6 md:px-12">
+        <nav class="relative">
+          <div class="flex justify-between items-center">
+            <a href="/index.html" class="font-medium">
+              <div class="flex flex-col">
+                <span class="text-lg font-bold">ADEOLA'S</span>
+                <span class="text-sm">CAR RENTAL</span>
+              </div>
+            </a>
+            
+            <!-- {/* Hamburger menu for mobile (CSS-only solution) */} -->
+            <label htmlFor="menu-toggle" class="cursor-pointer lg:hidden">
+              <i data-lucide="menu" class="h-6 w-6" ></i>
+            </label>
+            <input type="checkbox" id="menu-toggle" class="hidden" />
+            
+            <!-- {/* Navigation links */} -->
+            <div class="nav-links absolute left-0 right-0 top-full bg-white shadow-md lg:shadow-none lg:relative lg:top-auto lg:bg-transparent lg:flex lg:space-x-8">
+              <a href="/index.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+                Manage Bookings
+              </a>
+              <a href="/index.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+                About
+              </a>
+              <a href="/index.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+                Contact
+              </a>
+              <a href="/login.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+                Login
+              </a>
+              <a href="/signup.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent font-medium border-b lg:border-b-0 transition-colors">
+                Sign Up
+              </a>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main class="flex-1">
+        <div class="w-full bg-gray-200 py-6 px-4 md:px-8 lg:px-12">
+          <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+              <div class="mb-4 md:mb-0">
+                <p class="text-sm text-rental-primary">
+                  Pick up date - Return date<br />
+                  Pick up location - Return location
+                </p>
+              </div>
+              
+              <div class="flex items-center space-x-4">
+                <div class="flex items-center text-gray-500">
+                  <span class="mr-2">→</span>
+                  <span>Choose your car</span>
+                </div>
+                <div class="flex items-center text-gray-500">
+                  <span class="mr-2">→</span>
+                  <span>Choose your extras</span>
+                </div>
+                <div class="flex items-center">
+                  <span class="font-medium mr-2">→</span>
+                  <span class="font-medium">Review and Book</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="w-full py-8 px-4 md:px-8 lg:px-12">
+          <div class="max-w-7xl mx-auto">
+            <h1 class="text-2xl font-bold text-rental-primary mb-6">Review Your Booking</h1>
+            
+            <div class="bg-gray-200 p-6 rounded mb-8">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="flex space-x-4">
+                  <div class="flex flex-col">
+                    <div class="w-24 h-24 bg-gray-300 flex items-center justify-center mb-2">
+                      <div class="w-full h-full flex items-center justify-center border border-gray-400">
+                        <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" strokeWidth="1" fill="none">
+                          <line x1="6" y1="6" x2="18" y2="18"></line>
+                          <line x1="18" y1="6" x2="6" y2="18"></line>
+                        </svg>
+                      </div>
+                    </div>
+                    <a 
+                      href="/upgrade.html" 
+                      class="w-24 text-rental-primary border border-rental-primary text-center py-1 text-sm flex items-center justify-center hover:bg-gray-100 transition-colors"
+                    >
+                      <i data-lucide="arrow-up-right" size={14} class="mr-1" ></i>
+                      Upgrade
+                  </a>
+                  </div>
+                  <div>
+                    <div class="flex items-center">
+                      <h2 class="text-lg font-bold">MERCEDES A-CLASS</h2>
+                      <button class="ml-2 text-rental-primary">
+                        <i data-lucide="edit" size={16} ></i>
+                      </button>
+                    </div>
+                    <div class="text-sm mt-1">
+                      <span>4 seats</span>
+                      <span class="mx-2">•</span>
+                      <span>5 doors</span>
+                      <span class="mx-2">•</span>
+                      <span>Automatic</span>
+                      <span class="mx-2">•</span>
+                      <span>Petrol/Diesel</span>
+                    </div>
+                    
+                    <div class="mt-4">
+                      <div class="flex items-center">
+                        <h3 class="font-medium">Extras</h3>
+                        <button class="ml-2 text-rental-primary">
+                          <i data-lucide="edit" size={16} ></i>
+                        </button>
+                      </div>
+                      <ul class="mt-1">
+                        <!-- {bookingData.extras.map((extra, index) => ( -->
+                          <li key={index} class="flex items-center text-sm">
+                            <span class="mr-2">•</span>
+                            <span>Basic Protection</span>
+                          </li>
+                        <!-- ))} -->
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <div class="flex items-center mb-2">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" class="mr-2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <span class="font-medium">Pick up</span>
+                  </div>
+                  <div class="flex items-center justify-between mb-1">
+                    <div>
+                      Fri 21 Mar • 10:00am
+                      <div>Nottingham</div>
+                    </div>
+                    <button class="text-rental-primary">
+                      <i data-lucide="edit" size={16} ></i>
+                    </button>
+                  </div>
+                </div>
+                
+                <div>
+                  <div class="flex items-center mb-2">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" class="mr-2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <span class="font-medium">Return</span>
+                  </div>
+                  <div class="flex items-center justify-between mb-1">
+                    <div>
+                      Sat 22 Mar • 11:00am
+                      <div>Nottingham</div>
+                    </div>
+                    <button class="text-rental-primary">
+                      <i data-lucide="edit" size={16} ></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="flex justify-end mt-4">
+                <div class="flex items-center">
+                  <span class="font-bold mr-4">Total:</span>
+                  <span class="font-bold text-lg">£65.50</span>
+                </div>
+              </div>
+            </div>
+            
+            <h1 class="text-2xl font-bold text-rental-primary mb-6">Payment Details</h1>
+            
+            <form class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="space-y-2">
+                  <label htmlFor="cardNumber" class="block font-medium">Card Number</label>
+                  <input 
+                    type="text" 
+                    id="cardNumber" 
+                    class="w-full h-12 px-4 border border-gray-300 rounded bg-gray-200"
+                    placeholder="1234 5678 9012 3456"
+                  />
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="space-y-2">
+                    <label htmlFor="expiryDate" class="block font-medium">Expiry Date</label>
+                    <div class="grid grid-cols-2 gap-2">
+                      <input 
+                        type="text" 
+                        id="expiryMonth" 
+                        class="w-full h-12 px-4 border border-gray-300 rounded bg-gray-200"
+                        placeholder="MM"
+                      />
+                      <input 
+                        type="text" 
+                        id="expiryYear" 
+                        class="w-full h-12 px-4 border border-gray-300 rounded bg-gray-200"
+                        placeholder="YY"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div class="space-y-2">
+                    <label htmlFor="cvv" class="block font-medium">CVV</label>
+                    <input 
+                      type="text" 
+                      id="cvv" 
+                      class="w-full h-12 px-4 border border-gray-300 rounded bg-gray-200"
+                      placeholder="123"
+                    />
+                  </div>
+                </div>
+                
+                <div class="space-y-2 md:col-span-2">
+                  <label htmlFor="nameOnCard" class="block font-medium">Name on Card</label>
+                  <input 
+                    type="text" 
+                    id="nameOnCard" 
+                    class="w-full h-12 px-4 border border-gray-300 rounded bg-gray-200"
+                    placeholder="John Smith"
+                  />
+                </div>
+              </div>
+              
+              <h2 class="text-xl font-bold text-rental-primary mt-8 mb-4">Billing Address</h2>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="space-y-2">
+                  <label htmlFor="country" class="block font-medium">Country</label>
+                  <input 
+                    type="text" 
+                    id="country" 
+                    class="w-full h-12 px-4 border border-gray-300 rounded bg-gray-200"
+                    placeholder="United Kingdom"
+                  />
+                </div>
+                
+                <div class="space-y-2">
+                  <label htmlFor="address" class="block font-medium">Address</label>
+                  <input 
+                    type="text" 
+                    id="address" 
+                    class="w-full h-12 px-4 border border-gray-300 rounded bg-gray-200"
+                    placeholder="123 Main St"
+                  />
+                </div>
+                
+                <div class="space-y-2">
+                  <label htmlFor="city" class="block font-medium">City</label>
+                  <input 
+                    type="text" 
+                    id="city" 
+                    class="w-full h-12 px-4 border border-gray-300 rounded bg-gray-200"
+                    placeholder="London"
+                  />
+                </div>
+                
+                <div class="space-y-2">
+                  <label htmlFor="postcode" class="block font-medium">Postcode</label>
+                  <input 
+                    type="text" 
+                    id="postcode" 
+                    class="w-full h-12 px-4 border border-gray-300 rounded bg-gray-200"
+                    placeholder="SW1A 1AA"
+                  />
+                </div>
+              </div>
+              
+              <div class="flex justify-end mt-8">
+                <button 
+                  type="submit" 
+                  class="bg-gray-300 hover:bg-gray-400 transition-colors text-rental-primary font-medium px-6 py-3 rounded border border-gray-400"
+                >
+                  Book Now
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/src/checkout.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</body>
+</html>

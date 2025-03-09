@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="./src/signup.css" />
+  <link rel="stylesheet" href="./src/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="w-full py-4 px-6 md:px-12">
+        <nav class="relative">
+          <div class="flex justify-between items-center">
+            <a href="/index.html" class="font-medium">
+              <div class="flex flex-col">
+                <span class="text-lg font-bold">ADEOLA'S</span>
+                <span class="text-sm">CAR RENTAL</span>
+              </div>
+            </a>
+            
+            <!-- {/* Hamburger menu for mobile (CSS-only solution) */} -->
+            <label htmlFor="menu-toggle" class="cursor-pointer lg:hidden">
+              <i data-lucide="menu" class="h-6 w-6" ></i>
+            </label>
+            <input type="checkbox" id="menu-toggle" class="hidden" />
+            
+            <!-- {/* Navigation links */} -->
+            <div class="nav-links absolute left-0 right-0 top-full bg-white shadow-md lg:shadow-none lg:relative lg:top-auto lg:bg-transparent lg:flex lg:space-x-8">
+              <a href="/index.html" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] border-b lg:border-b-0 transition-colors">
+                Manage Bookings
+              </a>
+              <a href="/index.html" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] border-b lg:border-b-0 transition-colors">
+                About
+              </a>
+              <a href="/index.html" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] border-b lg:border-b-0 transition-colors">
+                Contact
+              </a>
+              <a href="/login.html" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] border-b lg:border-b-0 transition-colors">
+                Login
+              </a>
+              <a href="/signup.html" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] font-medium border-b lg:border-b-0 transition-colors">
+                Sign Up
+              </a>
+            </div>
+          </div>
+        </nav>
+      </header>
+  
+      <main class="flex-1 flex flex-col items-center justify-start">
+        <div class="w-full max-w-6xl mx-auto px-6 py-8">
+          <h1 class="text-3xl font-bold mb-10">Create an account</h1>
+          
+          <form class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6" onSubmit={handleSubmit}>
+            <div class="space-y-2">
+              <label htmlFor="firstName" class="block font-medium">
+                First Name
+              </label>
+              <input
+                id="firstName"
+                type="text"
+                class="w-full h-12 px-4 border border-[#E2E8F0]"
+              />
+            </div>
+            
+            <div class="space-y-2">
+              <label htmlFor="lastName" class="block font-medium">
+                Last Name
+              </label>
+              <input
+                id="lastName"
+                type="text"
+                class="w-full h-12 px-4 border border-[#E2E8F0]"
+              />
+            </div>
+            
+            <div class="space-y-2">
+              <label htmlFor="email" class="block font-medium">
+                Email address
+              </label>
+              <input
+                id="email"
+                type="email"
+                class="w-full h-12 px-4 border border-[#E2E8F0]"
+              />
+            </div>
+            
+            <div class="space-y-2">
+              <label htmlFor="password" class="block font-medium">
+                Password
+              </label>
+              <div class="relative">
+                <input
+                  id="password"
+                  class="w-full h-12 px-4 border border-[#E2E8F0] pr-12"
+                />
+                <button
+                  type="button"
+                  class="absolute right-4 top-1/2 transform -translate-y-1/2 text-[#8E9196]"
+                  onClick={togglePasswordVisibility}
+                >
+                  <i data-lucide="eye-off" size={20} ></i>  <i data-lucide="eye" size={20} ></i>
+                </button>
+              </div>
+            </div>
+            
+            <div class="space-y-2">
+              <label htmlFor="confirmEmail" class="block font-medium">
+                Confirm email address
+              </label>
+              <input
+                id="confirmEmail"
+                type="email"
+                class="w-full h-12 px-4 border border-[#E2E8F0]"
+              />
+            </div>
+            
+            <div class="space-y-2">
+              <label htmlFor="confirmPassword" class="block font-medium">
+                Confirm password
+              </label>
+              <div class="relative">
+                <input
+                  id="confirmPassword"
+                  class="w-full h-12 px-4 border border-[#E2E8F0] pr-12"
+                />
+                <button
+                  type="button"
+                  class="absolute right-4 top-1/2 transform -translate-y-1/2 text-[#8E9196]"
+                  onClick={toggleConfirmPasswordVisibility}
+                >
+                  <i data-lucide="eye-off" size={20} ></i> <i data-lucide="eye" size={20} ></i>
+                </button>
+              </div>
+            </div>
+            
+            <div class="md:col-span-2 flex items-start space-x-2 mt-2">
+              <input
+                type="checkbox"
+                id="terms"
+                class="mt-1"
+              />
+              <label htmlFor="terms" class="text-sm">
+                I agree to the
+                <a href="/" class="text-[#0EA5E9] hover:underline">
+                  Terms of Use
+                </a>
+                &
+                <a href="/" class="text-[#0EA5E9] hover:underline">
+                  Privacy Policy
+                </a>
+              </label>
+            </div>
+            
+            <div class="md:col-span-2 flex justify-between items-center mt-4">
+              <button
+                class="bg-[#F6F6F7] hover:bg-[#E2E8F0] text-[#1A1F2C] font-medium py-3 px-6 rounded w-full md:w-auto md:min-w-[200px]"
+              >
+                Sign Up
+              </button>
+              
+              <div class="hidden md:block text-sm">
+                Already have an account?
+                <a href="/login.html" class="text-[#0EA5E9] hover:underline">
+                  Login
+                </a>
+              </div>
+            </div>
+          </form>
+          
+          <div class="md:hidden text-sm text-center mt-6">
+            Already have an account?
+            <a href="/login.html" class="text-[#0EA5E9] hover:underline">
+              Login
+            </a>
+          </div>
+          
+          <div class="divider my-12">
+            <span class="px-4 text-[#8E9196]">or sign up with</span>
+          </div>
+          
+          <div class="flex justify-center space-x-4">
+            <button class="social-button">
+              <span class="text-lg font-medium">G</span>
+            </button>
+            <button class="social-button">
+              Apple
+            </button>
+            <button class="social-button">
+              <i data-lucide="facebook" size={20} ></i>
+            </button>
+          </div>
+          
+          <footer class="mt-16 pt-8 border-t flex flex-col md:flex-row justify-between items-center text-sm text-[#8E9196]">
+            <div>Copyright 2025 Adeola</div>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+              <a href="/" class="hover:text-[#1A1F2C]">
+                Terms & Conditions
+              </a>
+              <span>|</span>
+              <a href="/" class="hover:text-[#1A1F2C]">
+                Privacy
+              </a>
+              <span>|</span>
+              <a href="/" class="hover:text-[#1A1F2C]">
+                FAQs
+              </a>
+            </div>
+          </footer>
+      </main>
+    </div>
+    <script type="module" src="/src/signup.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</body>
+</html>

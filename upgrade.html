@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="./src/upgrade.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="w-full py-4 px-6 md:px-12">
+        <nav class="relative">
+          <div class="flex justify-between items-center">
+            <a href="/index.html" class="font-medium">
+              <div class="flex flex-col">
+                <span class="text-lg font-bold">ADEOLA'S</span>
+                <span class="text-sm">CAR RENTAL</span>
+              </div>
+            </a>
+            
+            <!-- {/* Hamburger menu for mobile (CSS-only solution) */} -->
+            <label htmlFor="menu-toggle" class="cursor-pointer lg:hidden">
+              <i data-lucide="menu" class="h-6 w-6" ></i>
+            </label>
+            <input type="checkbox" id="menu-toggle" class="hidden" />
+            
+            <!-- {/* Navigation links */} -->
+            <div class="nav-links absolute left-0 right-0 top-full bg-white shadow-md lg:shadow-none lg:relative lg:top-auto lg:bg-transparent lg:flex lg:space-x-8">
+              <a href="/index.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+                Manage Bookings
+              </a>
+              <a href="/index.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+                About
+              </a>
+              <a href="/index.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+                Contact
+              </a>
+              <a href="/login.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+                Login
+              </a>
+              <a href="/signup.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent font-medium border-b lg:border-b-0 transition-colors">
+                Sign Up
+              </a>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main class="flex-1">
+        <div class="w-full py-8 px-4 md:px-8 lg:px-12">
+          <div class="max-w-7xl mx-auto">
+            <h1 class="text-2xl font-bold text-rental-primary mb-6">Upgrade To Luxury From Just $7.30</h1>
+            
+            <!-- {/* Upgrade options */} -->
+            <div class="space-y-6">
+              <!-- {upgradeOptions.map((option) => ( -->
+                <div key={option.id} class="bg-gray-200 p-6 rounded">
+                  <div class="flex flex-col md:flex-row">
+                    <div class="w-full md:w-1/4 mb-4 md:mb-0">
+                      <div class="w-32 h-32 bg-gray-300 flex items-center justify-center mx-auto md:mx-0">
+                        <div class="w-full h-full flex items-center justify-center border border-gray-400">
+                          <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" strokeWidth="1" fill="none">
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="w-full md:w-2/4">
+                      <div class="flex items-center mb-2">
+                        <h2 class="text-xl font-bold">VAUXHALL ASTRA</h2>
+                        <button class="ml-2 text-blue-500">
+                          <i data-lucide="edit" size={16} ></i>
+                        </button>
+                      </div>
+                      
+                      <div class="flex flex-wrap mb-4">
+                        <span class="mr-6">4 seats</span>
+                        <span class="mr-6">5 doors</span>
+                        <span class="mr-6">Manual</span>
+                        <span>Petrol/Diesel</span>
+                      </div>
+                      
+                      <div>
+                        <h3 class="font-semibold mb-2">Improvements</h3>
+                        <ul class="list-disc pl-5">
+                          <!-- {option.improvements.map((improvement, index) => ( -->
+                            <li key={index}>More leg room</li>
+                          <!-- ))} -->
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <div class="w-full md:w-1/4 flex flex-col items-center md:items-end justify-between mt-4 md:mt-0">
+                      <div class="flex items-center">
+                        <span class="text-rental-primary mr-1">More details</span>
+                        <i data-lucide="chevron-down" size={16} class="text-rental-primary" ></i>
+                      </div>
+                      
+                      <div class="mt-2 mb-4 text-right">
+                        <div class="font-semibold">Additional Cost:</div>
+                        <div class="text-xl font-bold">£7.30</div>
+                      </div>
+                      
+                      <button 
+                        class="px-6 py-2 border rounded bg-rental-primary text-white border-rental-primary" 
+                      >
+                        Upgrade
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                             <!-- bg-white text-rental-primary border-gray-300 hover:bg-gray-100" -->
+
+              <!-- ))} -->
+            </div>
+            
+            <!-- {/* Total and continue */} -->
+            <div class="mt-8 flex flex-col items-end">
+              <div class="text-xl font-bold mb-4">
+                Selected Upgrade Total: £0.00
+              </div>
+              
+              <a
+                href="/checkout.html"
+                class="px-6 py-3 bg-gray-300 text-rental-primary hover:bg-gray-400 transition-colors rounded"
+              >
+                Continue to Checkout
+            </a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/src/upgrade.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</body>
+</html>

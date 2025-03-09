@@ -1,0 +1,310 @@
+@import "tailwindcss";
+
+/* .carMain {
+    flex: 1 1 0%;
+}
+
+.bookingProgress {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .bookingProgress {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .bookingProgress {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+.bookingProgressCont {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bookingProgressContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    .bookingProgressContainer {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.bookingProgressLeft {
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .bookingProgressLeft {
+        margin-bottom: 0;
+    }
+}
+
+.bookingProgressLeft p {
+    font-size: .875rem;
+    line-height: 1.25rem;
+    --tw-text-opacity: 1;
+    color: rgb(26 31 44 / var(--tw-text-opacity));
+}
+
+.bookingProgressRight {
+    display: flex;
+    align-items: center;
+}
+
+.bookingStageActive {
+    display: flex;
+    align-items: center;
+}
+
+.bookingStageActive span {
+    font-weight: 500;
+}
+
+.bookingStageActive span:first-child, .bookingStage span:first-child {
+    margin-right: .5rem;
+}
+
+.bookingStage {
+    display: flex;
+    align-items: center;
+    --tw-text-opacity: 1;
+    color: rgb(107 114 128 / var(--tw-text-opacity));
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1rem * var(--tw-space-x-reverse));
+    margin-left: calc(1rem * var(--tw-space-x-reverse));
+}
+
+.carBody {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .carBody {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .carBody {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+.carBodyCont {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carHeader {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    .carHeader {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.carHeader h1 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgb(26 31 44 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+    .carHeader h1 {
+        margin-bottom: 0;
+    }
+}
+
+.carHeaderRight {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.carFilter {
+    display: flex;
+    align-items: center;
+    border-radius: .25rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+    padding-left: .75rem;
+    padding-right: .75rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.carFilter span {
+    margin-right: .5rem;
+}
+
+.carFilter1 {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+    border-radius: .25rem;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
+
+.carCar {
+    padding: 1.5rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+    border-radius: .25rem;
+}
+
+.carCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    .carCont {
+        flex-direction: row;
+    }
+}
+
+.carLeft {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .carLeft {
+        flex-direction: row;
+    }
+}
+
+.carImg {
+    margin-bottom: 1rem;
+    display: flex;
+    height: 12rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 768px) {
+    .carImg {
+        margin-bottom: 0;
+        margin-right: 1.5rem;
+        width: 12rem;
+    }
+}
+
+.carImg img {
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    padding: 1rem;
+}
+
+.carDesc h2 {
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin-bottom: 1rem;
+    --tw-text-opacity: 1;
+    color: rgb(26 31 44 / var(--tw-text-opacity));
+}
+
+.carFeatures {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+    row-gap: .5rem;
+}
+
+.carDesc button {
+    cursor: pointer;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    --tw-text-opacity: 1;
+    color: rgb(26 31 44 / var(--tw-text-opacity));
+}
+
+.carDesc button i {
+    margin-left: .25rem;
+}
+
+.carRight {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+@media (min-width: 768px) {
+    .carRight {
+        margin-top: 0;
+    }
+}
+
+.carRight div {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+}
+
+.carRight a {
+    border-radius: .25rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    --tw-text-opacity: 1;
+    color: rgb(26 31 44 / var(--tw-text-opacity));
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .15s;
+} */

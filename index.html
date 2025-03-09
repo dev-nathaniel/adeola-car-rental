@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="./src/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+</head>
+
+<body>
+  <div id="app">
+    <header class="w-full py-4 px-6 md:px-12">
+      <nav class="relative">
+        <div class="flex justify-between items-center">
+          <a href="/index.html" class="font-medium">
+            <div class="flex flex-col">
+              <span class="text-lg font-bold">ADEOLA'S</span>
+              <span class="text-sm">CAR RENTAL</span>
+            </div>
+          </a>
+          
+          <!-- {/* Hamburger menu for mobile (CSS-only solution) */} -->
+          <label htmlFor="menu-toggle" class="cursor-pointer lg:hidden">
+            <i data-lucide="menu" class="h-6 w-6" ></i>
+          </label>
+          <input type="checkbox" id="menu-toggle" class="hidden" />
+          
+          <!-- {/* Navigation links */} -->
+          <div class="nav-links absolute left-0 right-0 top-full bg-white shadow-md lg:shadow-none lg:relative lg:top-auto lg:bg-transparent lg:flex lg:space-x-8">
+            <a href="/index.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+              Manage Bookings
+            </a>
+            <a href="/index.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+              About
+            </a>
+            <a href="/index.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+              Contact
+            </a>
+            <a href="/login.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+              Login
+            </a>
+            <a href="/signup.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent font-medium border-b lg:border-b-0 transition-colors">
+              Sign Up
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="rent">
+        <div class="rentCont">
+          <h2>Rent a Car</h2>
+          
+          <div class="rentInputs">
+            <div class="rentInput1">
+              <input 
+                type="text" 
+                placeholder="Pick up location" 
+              />
+            </div>
+            
+
+            <div class="rentInput2">
+              <input 
+                type="date" 
+                placeholder="Pick up date" 
+              />
+              <input 
+                type="time" 
+                placeholder="Pick up time" 
+              />
+            </div>
+
+            <div class="rentInput3">
+              <input 
+                type="text" 
+                placeholder="Return location" 
+              />
+            </div>
+            
+
+            <div class="rentInput4">
+              <input 
+                type="date" 
+                placeholder="Return date" 
+              />
+              <input 
+                type="time" 
+                placeholder="Return time" 
+              />
+            </div>
+          </div>
+          
+          <div class="rentButton">
+            <a href="/cars.html">
+              Find Cars
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carFleet">
+        <div class="carFleetCont">
+          <h2>Browse Our Car Rental Fleet...</h2>
+          
+          <div class="carGallery">
+              <div class="car">
+                <div class="carImage">
+                  <img 
+                    src="/placeholder.svg"
+                    alt="car"
+                  />
+                </div>
+                <span>SUV</span>
+              </div>
+
+              <div class="car">
+                <div class="carImage">
+                  <img 
+                    src="/placeholder.svg"
+                    alt="car"
+                  />
+                </div>
+                <span>SUV</span>
+              </div>
+
+              <div class="car">
+                <div class="carImage">
+                  <img 
+                    src="/placeholder.svg"
+                    alt="car"
+                  />
+                </div>
+                <span>SUV</span>
+              </div>
+
+              <div class="car">
+                <div class="carImage">
+                  <img 
+                    src="/placeholder.svg"
+                    alt="car"
+                  />
+                </div>
+                <span>SUV</span>
+              </div>
+
+              <div class="car">
+                <div class="carImage">
+                  <img 
+                    src="/placeholder.svg"
+                    alt="car"
+                  />
+                </div>
+                <span>SUV</span>
+              </div>
+
+              <div class="car">
+                <div class="carImage">
+                  <img 
+                    src="/placeholder.svg"
+                    alt="car"
+                  />
+                </div>
+                <span>SUV</span>
+              </div>
+
+              
+          </div>
+          
+          <div class="carFleetButton">
+            <button>
+              View Full Range
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footerCont">
+        <div class="footerLeft">
+          <p>Copyright 2025 Adeola</p>
+        </div>
+        
+        <div class="footerRight">
+          <a >Terms & Conditions</a>
+          <a >Privacy</a>
+          <a >FAQs</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+  <!-- Production version -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</body>
+
+</html>
