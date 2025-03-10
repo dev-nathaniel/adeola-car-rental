@@ -27,19 +27,19 @@
             
             <!-- {/* Navigation links */} -->
             <div class="nav-links absolute left-0 right-0 top-full bg-white shadow-md lg:shadow-none lg:relative lg:top-auto lg:bg-transparent lg:flex lg:space-x-8">
-              <a href="/index.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+              <a href="/index.html" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] border-b lg:border-b-0 transition-colors">
                 Manage Bookings
               </a>
-              <a href="/index.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+              <a href="/index.html" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] border-b lg:border-b-0 transition-colors">
                 About
               </a>
-              <a href="/index.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+              <a href="/index.html" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] border-b lg:border-b-0 transition-colors">
                 Contact
               </a>
-              <a href="/login.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+              <a href="/login.html" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] border-b lg:border-b-0 transition-colors">
                 Login
               </a>
-              <a href="/signup.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent font-medium border-b lg:border-b-0 transition-colors">
+              <a href="/signup.html" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] font-medium border-b lg:border-b-0 transition-colors">
                 Sign Up
               </a>
             </div>
@@ -58,7 +58,7 @@
               <input
                 id="email"
                 type="email"
-                class="w-full h-12 px-4 border border-rental-border bg-gray-100 rounded"
+                class="w-full h-12 px-4 border border-[#E2E8F0] bg-gray-100 rounded"
               />
             </div>
             
@@ -68,20 +68,22 @@
               </label>
               <div class="relative">
                 <input
+                type="password"
                   id="password"
-                  class="w-full h-12 px-4 border border-rental-border bg-gray-100 rounded pr-12"
+                  class="w-full h-12 px-4 border border-[#E2E8F0] bg-gray-100 rounded pr-12"
                 />
                 <button
                   type="button"
-                  class="absolute right-4 top-1/2 transform -translate-y-1/2 text-rental-muted"
-                  onClick={togglePasswordVisibility}
+                  class="absolute right-4 top-1/2 transform -translate-y-1/2 text-[#8E9196]"
+                  id="eye-button"
                 >
-                  <i data-lucide="eye-off" size={20} ></i> : <i data-lucide="eye" size={20} ></i>
+                  <i data-lucide="eye-off" id="eye-off" class="cursor-pointer" size={20} ></i>
+                   <i data-lucide="eye" id="eye" class="cursor-pointer hidden" size={20} ></i>
                 </button>
               </div>
             </div>
             
-            <div class="space-y-2">
+            <!-- <div class="space-y-2">
               <label for="confirmEmail" class="block font-medium">
                 Confirm email address
               </label>
@@ -91,7 +93,7 @@
                 class="w-full h-12 px-4 border border-rental-border bg-gray-100 rounded"
               />
             </div>
-            
+             -->
             <div class="flex items-center justify-between">
               <div class="flex items-center space-x-2">
                 <input
@@ -106,7 +108,7 @@
               
               <div class="text-sm">
                 <span>Don't have an account? </span>
-                <a href="/signup.html" class="text-rental-accent hover:underline">
+                <a href="/signup.html" class="text-[#0EA5E9] hover:underline">
                   Sign Up
                 </a>
               </div>
@@ -114,13 +116,13 @@
             
             <button
               type="submit"
-              class="w-full bg-rental-light hover:bg-rental-border text-rental-primary font-medium py-3 rounded transition-colors"
+              class="w-full bg-[#F6F6F7] hover:bg-[#E2E8F0] text-[#1A1F2C] cursor-pointer font-medium py-3 rounded transition-colors"
             >
               Login
             </button>
             
             <div class="text-center">
-              <a href="/forgot-password" class="text-rental-accent hover:underline text-sm">
+              <a href="/forgot-password" class="text-[#0EA5E9] hover:underline text-sm">
                 Forgot Password?
               </a>
             </div>
@@ -151,18 +153,18 @@
         </div>
         
         <footer class="mt-16 pt-8 border-t w-full">
-          <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm text-rental-muted">
+          <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm text-[#8E9196]">
             <div>Copyright 2025 Adeola</div>
             <div class="flex space-x-4 mt-4 md:mt-0">
-              <a href="/terms" class="hover:text-rental-primary">
+              <a href="/terms" class="hover:text-[#1A1F2C]">
                 Terms & Conditions
               </a>
               <span>|</span>
-              <a href="/privacy" class="hover:text-rental-primary">
+              <a href="/privacy" class="hover:text-[#1A1F2C]">
                 Privacy
               </a>
               <span>|</span>
-              <a href="/faqs" class="hover:text-rental-primary">
+              <a href="/faqs" class="hover:text-[#1A1F2C]">
                 FAQs
               </a>
             </div>
