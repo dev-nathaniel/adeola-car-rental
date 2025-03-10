@@ -26,3 +26,36 @@ eyeButton.addEventListener('click', ()=>{
     showPassword = !showPassword;
     changePasswordState()
 })
+
+document.getElementById("loginForm").addEventListener("submit", async function(event) {
+    event.preventDefault(); // Prevent form refresh
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    console.log(email, password)
+
+    try {
+        const response = await fetch("https://adeola-car-rental-server.onrender.com/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            // document.getElementById("message").textContent = "✅ Login Successful!";
+            alert('Logged in')
+            console.log("User Data:", data);
+            window.location.href = '/'
+        } else {
+            alert('Log in failed')
+            // document.getElementById("message").textContent = "❌ " + data.error;
+        }
+
+    } catch (error) {
+        // document.getElementById("message").textContent = "❌ Error connecting to server.";
+        console.error("Login Error:", error);
+    }
+});

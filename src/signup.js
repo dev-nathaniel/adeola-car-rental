@@ -48,3 +48,48 @@ eyeButton.addEventListener('click', ()=>{
     showPassword = !showPassword;
     changePasswordState()
 })
+
+document.getElementById("signupForm").addEventListener("submit", async function(event) {
+    event.preventDefault(); // Prevent form refresh
+
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const confirmEmail = document.getElementById("confirmEmail").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (email !== confirmEmail) {
+        alert('Emails do not match')
+        return
+    }
+
+    if (password !== confirmPassword) {
+        alert('passwords do not match')
+        return
+    }
+
+    try {
+        const response = await fetch("https://adeola-car-rental-server.onrender.com/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ firstName, lastName, email, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            // document.getElementById("message").textContent = "✅ Login Successful!";
+            alert('Signed up')
+            console.log("User Data:", data);
+            window.location.href = '/'
+        } else {
+            alert(data.error)
+            // document.getElementById("message").textContent = "❌ " + data.error;
+        }
+
+    } catch (error) {
+        // document.getElementById("message").textContent = "❌ Error connecting to server.";
+        console.error("Sign up Error:", error);
+    }
+});
