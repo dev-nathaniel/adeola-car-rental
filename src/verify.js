@@ -7,6 +7,20 @@ const urlParams = new URLSearchParams(window.location.search);
 const token = urlParams.get('token');
 const email = urlParams.get('email');
 
+// Check if token exists in localStorage
+const localtoken = localStorage.getItem('token');
+if (localtoken) {
+    console.log('Token found:', localtoken);
+    
+  document.getElementById('login').style.display = 'none';
+  document.getElementById('signup').style.display = 'none'
+  document.getElementById('profile').style.display = 'block'
+    // Redirect to a protected route or perform actions that require authentication
+} else {
+    // console.log('No token found. Redirecting to login...');
+    // Redirect to login page
+}
+
 if (token) {
     document.getElementById('verifyText').textContent = `Congratulations! Your email has been verified.`;
     fetch(`https://adeola-car-rental-server.onrender.com/verifyemail`, {
