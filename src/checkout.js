@@ -10,7 +10,7 @@ if (token) {
     
   document.getElementById('login').style.display = 'none';
   document.getElementById('signup').style.display = 'none'
-  document.getElementById('profile').style.display = 'block'
+  document.getElementById('logout').style.display = 'block'
     // Redirect to a protected route or perform actions that require authentication
 } else {
     // console.log('No token found. Redirecting to login...');
@@ -60,7 +60,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
 
             if (allFilled) {
                 alert('Successfully booked!');
-                window.location.href = '/index.html'; // Navigate back to home
+                window.location.href = '/'; // Navigate back to home
             } else {
                 alert('Please fill in all fields.');
             }
@@ -68,6 +68,6 @@ document.querySelector('form').addEventListener('submit', function(event) {
     })
     .catch(error => {
         console.error('Error verifying token:', error);
-        window.location.href = '/login.html'; // Redirect to login on error
+        // window.location.href = '/login.html'; // Redirect to login on error
     });
 });

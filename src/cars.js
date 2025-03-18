@@ -10,7 +10,7 @@ if (token) {
     
   document.getElementById('login').style.display = 'none';
   document.getElementById('signup').style.display = 'none'
-  document.getElementById('profile').style.display = 'block'
+  document.getElementById('logout').style.display = 'block'
     // Redirect to a protected route or perform actions that require authentication
 } else {
     // console.log('No token found. Redirecting to login...');
