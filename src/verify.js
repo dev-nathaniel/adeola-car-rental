@@ -9,23 +9,26 @@ const email = urlParams.get('email');
 
 if (token) {
     document.getElementById('verifyText').textContent = `Congratulations! Your email has been verified.`;
-    try {
-        const response = await fetch(`/verifyemail`, {
-            method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, verificationToken: token })
-        });
+    fetch(`/verifyemail`, {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, verificationToken: token })
+    })
+    .then(response => {
         if (response.ok) {
-            const data = await response.json();
-            localStorage.setItem('token', data.token);
-            localStorage.setItem('userDetails', JSON.stringify(data.userDetails));
-            window.location.href = '/';
+            return response.json();
         } else {
             console.error('Invalid token');
         }
-    } catch (error) {
+    })
+    .then(data => {
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('userDetails', JSON.stringify(data.userDetails));
+        window.location.href = '/';
+    })
+    .catch(error => {
         console.error('Error verifying and validating token:', error);
-    }
+    });
 } else {
     console.log(email)
     document.getElementById('verifyText').textContent = `An email was sent to ${email}. Please confirm your email address to get started.`

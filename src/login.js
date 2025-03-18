@@ -1,5 +1,7 @@
 import { createIcons, icons } from 'lucide';
 
+//loading animation, proper error messages
+
 // Caution, this will import all the icons and bundle them.
 createIcons({ icons });
 
@@ -50,7 +52,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
             console.log("User Data:", data);
             window.location.href = '/'
         } else {
-            alert('Log in failed')
+            alert(data.error)
             // document.getElementById("message").textContent = "❌ " + data.error;
         }
 
