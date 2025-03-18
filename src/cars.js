@@ -30,4 +30,5 @@ function handleLogout() {
 document.getElementById('logout').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent default link behavior
     handleLogout(); // Call the logout function
+    window.location.href = '/cars';
 });
