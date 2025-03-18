@@ -9,7 +9,7 @@ const email = urlParams.get('email');
 
 if (token) {
     document.getElementById('verifyText').textContent = `Congratulations! Your email has been verified.`;
-    fetch(`/verifyemail`, {
+    fetch(`https://adeola-car-rental-server.onrender.com/verifyemail`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, verificationToken: token })
