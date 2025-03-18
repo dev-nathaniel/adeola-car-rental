@@ -15,4 +15,23 @@ if (token) {
 } else {
     // console.log('No token found. Redirecting to login...');
     // Redirect to login page
+    
+  document.getElementById('login').style.display = 'block';
+  document.getElementById('signup').style.display = 'block'
+  document.getElementById('logout').style.display = 'none'
 }
+
+
+// Function to handle logout
+function handleLogout() {
+    // Remove token and user details from localStorage
+    localStorage.removeItem('token');
+    localStorage.removeItem('userDetails'); // Assuming userDetails is stored under this key
+    // window.location.href = '/login'; // Redirect to login page
+}
+
+// Add event listener for logout button
+document.getElementById('logout').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+    handleLogout(); // Call the logout function
+});

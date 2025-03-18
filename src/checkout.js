@@ -15,6 +15,10 @@ if (token) {
 } else {
     // console.log('No token found. Redirecting to login...');
     // Redirect to login page
+    
+  document.getElementById('login').style.display = 'block';
+  document.getElementById('signup').style.display = 'block'
+  document.getElementById('logout').style.display = 'none'
 }
 
 // Add an event listener for form submission
@@ -25,7 +29,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
     // const token = localStorage.getItem('token');
     if (!token) {
         // If no token, redirect to login page
-        window.location.href = '/login.html';
+        window.location.href = '/login';
         return; // Exit the function
     }
 
@@ -41,7 +45,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
     .then(response => {
         if (!response.ok) {
             // If token is not valid, redirect to login page
-            window.location.href = '/login.html';
+            window.location.href = '/login';
         } else {
             // Check if all fields are filled
             const fields = [
@@ -70,4 +74,18 @@ document.querySelector('form').addEventListener('submit', function(event) {
         console.error('Error verifying token:', error);
         // window.location.href = '/login.html'; // Redirect to login on error
     });
+});
+
+// Function to handle logout
+function handleLogout() {
+    // Remove token and user details from localStorage
+    localStorage.removeItem('token');
+    localStorage.removeItem('userDetails'); // Assuming userDetails is stored under this key
+    // window.location.href = '/login'; // Redirect to login page
+}
+
+// Add event listener for logout button
+document.getElementById('logout').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+    handleLogout(); // Call the logout function
 });
