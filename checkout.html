@@ -199,6 +199,8 @@
                     id="cardNumber" 
                     class="w-full h-12 px-4 border border-gray-300 rounded bg-gray-200"
                     placeholder="1234 5678 9012 3456"
+                    pattern="\d{16}" 
+                    maxlength="16"
                   />
                 </div>
                 
@@ -211,12 +213,16 @@
                         id="expiryMonth" 
                         class="w-full h-12 px-4 border border-gray-300 rounded bg-gray-200"
                         placeholder="MM"
+                        pattern="\d{2}" 
+                        maxlength="2"
                       />
                       <input 
                         type="text" 
                         id="expiryYear" 
                         class="w-full h-12 px-4 border border-gray-300 rounded bg-gray-200"
                         placeholder="YY"
+                        pattern="\d{2}" 
+                        maxlength="2"
                       />
                     </div>
                   </div>
@@ -228,6 +234,8 @@
                       id="cvv" 
                       class="w-full h-12 px-4 border border-gray-300 rounded bg-gray-200"
                       placeholder="123"
+                      pattern="\d{3}" 
+                      maxlength="3"
                     />
                   </div>
                 </div>
