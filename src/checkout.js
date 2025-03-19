@@ -36,7 +36,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
     // Verify token before checking if all fields are filled
     // const token = localStorage.getItem('accessToken');
     fetch('https://adeola-car-rental-server.onrender.com/verifytoken', {
-        method: 'POST',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
