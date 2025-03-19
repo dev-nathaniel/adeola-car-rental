@@ -81,7 +81,7 @@ document.getElementById("signupForm").addEventListener("submit", async function(
         if (response.ok) {
             // document.getElementById("message").textContent = "✅ Login Successful!";
             alert('Signed up')
-            console.log("User Data:", data);
+            // console.log("User Data:", data);
             window.location.href = `/verify?email=${email}`
         } else {
             alert(data.error)
