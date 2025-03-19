@@ -24,12 +24,12 @@ const changePasswordState = () => {
     }
 }
 
-eyeButton.addEventListener('click', ()=>{
+eyeButton.addEventListener('click', () => {
     showPassword = !showPassword;
     changePasswordState()
 })
 
-document.getElementById("loginForm").addEventListener("submit", async function(event) {
+document.getElementById("loginForm").addEventListener("submit", async function (event) {
     event.preventDefault(); // Prevent form refresh
 
     const email = document.getElementById("email").value;
@@ -49,10 +49,10 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
         if (response.ok) {
             // document.getElementById("message").textContent = "✅ Login Successful!";
             alert('Logged in')
-            
-        const {accessToken, ...others} = data
-        localStorage.setItem('accessToken', accessToken);
-        localStorage.setItem('userDetails', ...others);
+
+            const { accessToken, ...others } = data
+            localStorage.setItem('accessToken', accessToken);
+            localStorage.setItem('userDetails', JSON.stringify({...others}));
             window.location.href = '/'
         } else {
             alert(data.error)
