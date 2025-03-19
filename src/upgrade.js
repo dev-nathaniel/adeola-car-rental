@@ -4,7 +4,7 @@ import { createIcons, icons } from 'lucide';
 createIcons({ icons });
 
 // Check if token exists in localStorage
-const token = localStorage.getItem('token');
+const token = localStorage.getItem('accessToken');
 if (token) {
     console.log('Token found:', token);
     
@@ -25,7 +25,7 @@ if (token) {
 // Function to handle logout
 function handleLogout() {
     // Remove token and user details from localStorage
-    localStorage.removeItem('token');
+    localStorage.removeItem('accessToken');
     localStorage.removeItem('userDetails'); // Assuming userDetails is stored under this key
     // window.location.href = '/login'; // Redirect to login page
 }

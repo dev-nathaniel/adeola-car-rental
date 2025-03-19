@@ -5,10 +5,10 @@ createIcons({ icons });
 
 const urlParams = new URLSearchParams(window.location.search);
 const token = urlParams.get('token');
-const email = urlParams.get('email');
+const id = urlParams.get('id');
 
 // Check if token exists in localStorage
-const localtoken = localStorage.getItem('token');
+const localtoken = localStorage.getItem('accessToken');
 if (localtoken) {
     console.log('Token found:', localtoken);
     
@@ -30,7 +30,7 @@ if (token) {
     fetch(`https://adeola-car-rental-server.onrender.com/verifyemail`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, verificationToken: token })
+        body: JSON.stringify({ id, verificationToken: token })
     })
     .then(response => {
         if (response.ok) {
@@ -40,8 +40,9 @@ if (token) {
         }
     })
     .then(data => {
-        localStorage.setItem('token', data.token);
-        localStorage.setItem('userDetails', JSON.stringify(data.userDetails));
+        const {accessToken, ...others} = data
+        localStorage.setItem('accessToken', accessToken);
+        localStorage.setItem('userDetails', ...others);
         window.location.href = '/';
     })
     .catch(error => {
@@ -56,7 +57,7 @@ if (token) {
 // Function to handle logout
 function handleLogout() {
     // Remove token and user details from localStorage
-    localStorage.removeItem('token');
+    localStorage.removeItem('accessToken');
     localStorage.removeItem('userDetails'); // Assuming userDetails is stored under this key
     // window.location.href = '/login'; // Redirect to login page
 }

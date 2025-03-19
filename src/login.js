@@ -35,7 +35,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    console.log(email, password)
+    // console.log(email, password)
 
     try {
         const response = await fetch("https://adeola-car-rental-server.onrender.com/login", {
@@ -49,7 +49,10 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
         if (response.ok) {
             // document.getElementById("message").textContent = "✅ Login Successful!";
             alert('Logged in')
-            console.log("User Data:", data);
+            
+        const {accessToken, ...others} = data
+        localStorage.setItem('accessToken', accessToken);
+        localStorage.setItem('userDetails', ...others);
             window.location.href = '/'
         } else {
             alert(data.error)
