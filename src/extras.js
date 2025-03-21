@@ -36,3 +36,58 @@ document.getElementById('logout').addEventListener('click', function(event) {
     handleLogout(); // Call the logout function
     window.location.href = '/extras';
 });
+
+// Add an event listener for form submission
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Check if token exists in localStorage
+    // const token = localStorage.getItem('accessToken');
+    if (!token) {
+        // If no token, redirect to login page
+        window.location.href = '/login';
+        return; // Exit the function
+    }
+
+    // Verify token before checking if all fields are filled
+    // const token = localStorage.getItem('accessToken');
+    fetch('https://adeola-car-rental-server.onrender.com/verifytoken', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            // If token is not valid, redirect to login page
+            window.location.href = '/login';
+        } else {
+            // Check if all fields are filled
+            const fields = [
+                document.getElementById('cardNumber'),
+                document.getElementById('expiryMonth'),
+                document.getElementById('expiryYear'),
+                document.getElementById('cvv'),
+                document.getElementById('nameOnCard'),
+                document.getElementById('country'),
+                document.getElementById('address'),
+                document.getElementById('city'),
+                document.getElementById('postcode')
+            ];
+
+            const allFilled = fields.every(field => field.value.trim() !== '');
+
+            if (allFilled) {
+                alert('Successfully booked!');
+                window.location.href = '/'; // Navigate back to home
+            } else {
+                alert('Please fill in all fields.');
+            }
+        }
+    })
+    .catch(error => {
+        console.error('Error verifying token:', error);
+        // window.location.href = '/login.html'; // Redirect to login on error
+    });
+});

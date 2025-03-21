@@ -82,16 +82,16 @@ document.getElementById("loginForm").addEventListener("submit", async function (
     // Validate email and password
     let isValid = true;
 
-    if (!isValidEmail(email)) {
-        console.log('test')
-        errorMessageEmail.textContent = 'Please enter a valid email address.';
-        isValid = false;
-    }
+    // if (!isValidEmail(email)) {
+    //     console.log('test')
+    //     errorMessageEmail.textContent = 'Please enter a valid email address.';
+    //     isValid = false;
+    // }
 
-    if (!isValidPassword(passwordValue)) {
-        errorMessagePassword.textContent = 'Password must be at least 8 characters long, contain at least one letter, one number, and one special character.';
-        isValid = false;
-    }
+    // if (!isValidPassword(passwordValue)) {
+    //     errorMessagePassword.textContent = 'Password must be at least 8 characters long, contain at least one letter, one number, and one special character.';
+    //     isValid = false;
+    // }
 
     // If validation fails, do not proceed
     if (!isValid) {
