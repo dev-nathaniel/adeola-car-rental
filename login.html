@@ -28,7 +28,7 @@
             
             <!-- {/* Navigation links */} -->
             <div class="nav-links absolute left-0 right-0 top-full bg-white shadow-md lg:shadow-none lg:relative lg:top-auto lg:bg-transparent lg:flex lg:space-x-8">
-              <a href="/" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] border-b lg:border-b-0 transition-colors">
+              <a href="/manageBookings.html" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] border-b lg:border-b-0 transition-colors">
                 Manage Bookings
               </a>
               <a href="/" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] border-b lg:border-b-0 transition-colors">
@@ -61,6 +61,7 @@
                 type="email"
                 class="w-full h-12 px-4 border border-[#E2E8F0] bg-gray-100 rounded"
               />
+              <span class="text-red-500" id="emailError"></span>
             </div>
             
             <div class="space-y-2">
@@ -82,6 +83,7 @@
                    <i data-lucide="eye" id="eye" class="cursor-pointer hidden" size={20} ></i>
                 </button>
               </div>
+              <span class="text-red-500" id="passwordError"></span>
             </div>
             
             <!-- <div class="space-y-2">
@@ -117,6 +119,7 @@
             
             <button
               type="submit"
+              id="submit-button"
               class="w-full bg-[#F6F6F7] hover:bg-[#E2E8F0] text-[#1A1F2C] cursor-pointer font-medium py-3 rounded transition-colors"
             >
               Login
@@ -173,6 +176,9 @@
         </footer>
       </main>
     </div>
+    <!-- <div id="loading" style="display: none; text-align: center; margin-top: 10px;">
+        <span>Loading...</span>
+    </div> -->
     <script type="module" src="/src/login.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
 </body>

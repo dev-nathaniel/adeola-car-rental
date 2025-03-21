@@ -6,6 +6,7 @@ createIcons({ icons });
 const urlParams = new URLSearchParams(window.location.search);
 const token = urlParams.get('token');
 const id = urlParams.get('id');
+const email = urlParams.get('email');
 
 // Check if token exists in localStorage
 const localtoken = localStorage.getItem('accessToken');
@@ -26,24 +27,33 @@ if (localtoken) {
 }
 
 if (token) {
-    document.getElementById('verifyText').textContent = `Congratulations! Your email has been verified.`;
+    document.getElementById('verifyText').textContent = `Verifying Your email......`;
     fetch(`https://adeola-car-rental-server.onrender.com/verifyemail`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id, verificationToken: token })
     })
-    .then(response => {
+    .then(async response => {
         if (response.ok) {
             return response.json();
         } else {
+            const res = await response.json()
+            if (res.error == "User already verified!") {
+            alert(res.error)
+            document.getElementById('verifyText').textContent = `Congratulations! Your email has been verified.`;
+                window.location.href = '/'
+            }
+            alert(res.error)
             console.error('Invalid token');
         }
     })
     .then(data => {
+        document.getElementById('verifyText').textContent = `Congratulations! Your email has been verified.`;
         const {accessToken, ...others} = data
         localStorage.setItem('accessToken', accessToken);
-        localStorage.setItem('userDetails', ...others);
-        window.location.href = '/';
+        localStorage.setItem('userDetails', JSON.stringify({...others}));
+            alert("Your email has been verified")
+            window.location.href = '/';
     })
     .catch(error => {
         console.error('Error verifying and validating token:', error);

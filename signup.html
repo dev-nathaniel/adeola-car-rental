@@ -28,7 +28,7 @@
             
             <!-- {/* Navigation links */} -->
             <div class="nav-links absolute left-0 right-0 top-full bg-white shadow-md lg:shadow-none lg:relative lg:top-auto lg:bg-transparent lg:flex lg:space-x-8">
-              <a href="/" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] border-b lg:border-b-0 transition-colors">
+              <a href="/manageBookings.html" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] border-b lg:border-b-0 transition-colors">
                 Manage Bookings
               </a>
               <a href="/" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] border-b lg:border-b-0 transition-colors">
@@ -62,6 +62,7 @@
                 type="text"
                 class="w-full h-12 px-4 border border-[#E2E8F0]"
               />
+              <span class="text-red-500" id="firstNameError"></span>
             </div>
             
             <div class="space-y-2">
@@ -73,6 +74,7 @@
                 type="text"
                 class="w-full h-12 px-4 border border-[#E2E8F0]"
               />
+              <span class="text-red-500" id="lastNameError"></span>
             </div>
             
             <div class="space-y-2">
@@ -84,6 +86,7 @@
                 type="email"
                 class="w-full h-12 px-4 border border-[#E2E8F0]"
               />
+              <span class="text-red-500" id="emailError"></span>
             </div>
             
             <div class="space-y-2">
@@ -105,6 +108,7 @@
                   <i data-lucide="eye" id="eye" class="cursor-pointer hidden" size={20} ></i>
                 </button>
               </div>
+              <span class="text-red-500" id="passwordError"></span>
             </div>
             
             <div class="space-y-2">
@@ -116,6 +120,7 @@
                 type="email"
                 class="w-full h-12 px-4 border border-[#E2E8F0]"
               />
+              <span class="text-red-500" id="confirmEmailError"></span>
             </div>
             
             <div class="space-y-2">
@@ -137,6 +142,7 @@
                   <i data-lucide="eye" id="confirm-eye" class="hidden cursor-pointer" size={20} ></i>
                 </button>
               </div>
+              <span class="text-red-500" id="confirmPasswordError"></span>
             </div>
             
             <div class="md:col-span-2 flex items-start space-x-2 mt-2">
@@ -159,6 +165,8 @@
             
             <div class="md:col-span-2 flex justify-between items-center mt-4">
               <button
+                type="submit"
+                id="submit-button"
                 class="bg-[#F6F6F7] cursor-pointer hover:bg-[#E2E8F0] text-[#1A1F2C] font-medium py-3 px-6 rounded w-full md:w-auto md:min-w-[200px]"
               >
                 Sign Up

@@ -18,19 +18,19 @@ export const NavBar =
           
           
           <div class="nav-links absolute left-0 right-0 top-full bg-white shadow-md lg:shadow-none lg:relative lg:top-auto lg:bg-transparent lg:flex lg:space-x-8">
-            <a to="/bookings" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+            <a href="/manageBookings.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
               Manage Bookings
             </a>
-            <a to="/about" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+            <a href="/about" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
               About
             </a>
-            <a to="/contact" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+            <a href="/contact" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
               Contact
             </a>
-            <a to="/login" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+            <a href="/login" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
               Login
             </a>
-            <a to="/signup" class="block py-3 px-6 lg:px-0 hover:text-rental-accent font-medium border-b lg:border-b-0 transition-colors">
+            <a href="/signup" class="block py-3 px-6 lg:px-0 hover:text-rental-accent font-medium border-b lg:border-b-0 transition-colors">
               Sign Up
             </a>
           </div>

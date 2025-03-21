@@ -12,7 +12,8 @@ export default defineConfig({
         checkout: '/checkout.html',
         upgrade: '/upgrade.html',
         verify: '/verify.html',
-        mfa: '/twoFA.html'
+        mfa: '/twoFA.html',
+        bookings: '/manageBookings.html'
       }
     }
   },
