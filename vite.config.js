@@ -11,7 +11,8 @@ export default defineConfig({
         extras: '/extras.html',
         checkout: '/checkout.html',
         upgrade: '/upgrade.html',
-        verify: '/verify.html'
+        verify: '/verify.html',
+        mfa: '/twoFA.html'
       }
     }
   },

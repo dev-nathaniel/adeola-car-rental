@@ -53,7 +53,7 @@ document.getElementById("loginForm").addEventListener("submit", async function (
             const { accessToken, ...others } = data
             localStorage.setItem('accessToken', accessToken);
             localStorage.setItem('userDetails', JSON.stringify({...others}));
-            window.location.href = '/'
+            window.location.href = '/twoFA.html'
         } else {
             alert(data.error)
             // document.getElementById("message").textContent = "❌ " + data.error;
