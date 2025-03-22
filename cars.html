@@ -1,157 +1,166 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <link rel="stylesheet" href="./src/style.css" />
   <link rel="stylesheet" href="./src/cars.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app">
-      <header class="w-full py-4 px-6 md:px-12">
-        <nav class="relative">
-          <div class="flex justify-between items-center">
-            <a href="/" class="font-medium">
-              <div class="flex flex-col">
-                <span class="text-lg font-bold">ADEOLA'S</span>
-                <span class="text-sm">CAR RENTAL</span>
-              </div>
-            </a>
-            
-            <!-- {/* Hamburger menu for mobile (CSS-only solution) */} -->
-            <label for="menu-toggle" class="cursor-pointer lg:hidden">
-              <i data-lucide="menu" class="h-6 w-6" ></i>
-            </label>
-            <input type="checkbox" id="menu-toggle" class="hidden" />
-            
-            <!-- {/* Navigation links */} -->
-            <div class="nav-links absolute left-0 right-0 top-full bg-white shadow-md lg:shadow-none lg:relative lg:top-auto lg:bg-transparent lg:flex lg:space-x-8">
-              <a href="/manageBookings.html" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
-                Manage Bookings
-              </a>
-              <a href="/" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
-                About
-              </a>
-              <a href="/" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
-                Contact
-              </a>
-              <a id="login" href="/login" class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
-                Login
-              </a>
-              <a id="signup" href="/signup" class="block py-3 px-6 lg:px-0 hover:text-rental-accent font-medium border-b lg:border-b-0 transition-colors">
-                Sign Up
-              </a>
-              <a id="logout" href="/signup" class="hidden py-3 px-6 lg:px-0 hover:text-rental-accent font-medium border-b lg:border-b-0 transition-colors">
-                Log out
-              </a>
-            </div>
-          </div>
-        </nav>
-      </header>
+  <title>Vite App</title>
+</head>
 
-      <main class="flex-1">
-        <!-- {/* Booking progress bar */} -->
-        <div class="w-full bg-gray-200 py-6 px-4 md:px-8 lg:px-12">
-          <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-center items-start md:items-center">
-              
-              
-              <div class="flex items-center space-x-4">
-                <div class="mb-4 md:mb-0">
-                  <p class="text-sm text-rental-primary">
-                    Pick up date - Return date<br />
-                    Pick up location - Return location
-                  </p>
-                </div>
-                <div class="flex items-center">
-                  <span class="font-medium mr-2">→</span>
-                  <span class="font-medium">Choose your car</span>
-                </div>
-                <div class="flex items-center text-gray-500">
-                  <span class="mr-2">→</span>
-                  <span>Choose your extras</span>
-                </div>
-                <div class="flex items-center text-gray-500">
-                  <span class="mr-2">→</span>
-                  <span>Review and Book</span>
-                </div>
+<body>
+  <div id="app">
+    <header class="w-full py-4 px-6 md:px-12">
+      <nav class="relative">
+        <div class="flex justify-between items-center">
+          <a href="/" class="font-medium">
+            <div class="flex flex-col">
+              <span class="text-lg font-bold">ADEOLA'S</span>
+              <span class="text-sm">CAR RENTAL</span>
+            </div>
+          </a>
+
+          <!-- {/* Hamburger menu for mobile (CSS-only solution) */} -->
+          <label for="menu-toggle" class="cursor-pointer lg:hidden">
+            <i data-lucide="menu" class="h-6 w-6"></i>
+          </label>
+          <input type="checkbox" id="menu-toggle" class="hidden" />
+
+          <!-- {/* Navigation links */} -->
+          <div
+            class="nav-links absolute left-0 right-0 top-full bg-white shadow-md lg:shadow-none lg:relative lg:top-auto lg:bg-transparent lg:flex lg:space-x-8">
+            <a href="/manageBookings.html"
+              class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+              Manage Bookings
+            </a>
+            <a href="/"
+              class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+              About
+            </a>
+            <a href="/"
+              class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+              Contact
+            </a>
+            <a id="login" href="/login"
+              class="block py-3 px-6 lg:px-0 hover:text-rental-accent border-b lg:border-b-0 transition-colors">
+              Login
+            </a>
+            <a id="signup" href="/signup"
+              class="block py-3 px-6 lg:px-0 hover:text-rental-accent font-medium border-b lg:border-b-0 transition-colors">
+              Sign Up
+            </a>
+            <a id="logout" href="/signup"
+              class="hidden py-3 px-6 lg:px-0 hover:text-rental-accent font-medium border-b lg:border-b-0 transition-colors">
+              Log out
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-1">
+      <!-- {/* Booking progress bar */} -->
+      <div class="w-full bg-gray-200 py-6 px-4 md:px-8 lg:px-12">
+        <div class="max-w-7xl mx-auto">
+          <div class="flex flex-col md:flex-row justify-center items-start md:items-center">
+
+
+            <div class="flex items-center space-x-4">
+              <div class="mb-4 md:mb-0">
+                <p id="rentDate" class="text-sm text-rental-primary">Pick up date - Return date</p>
+                <p id="rentLocation" class="text-sm text-rental-primary">Pick up location - Return location</p>
+              </div>
+              <div class="flex items-center">
+                <span class="font-medium mr-2">→</span>
+                <span class="font-medium">Choose your car</span>
+              </div>
+              <div class="flex items-center text-gray-500">
+                <span class="mr-2">→</span>
+                <span>Choose your extras</span>
+              </div>
+              <div class="flex items-center text-gray-500">
+                <span class="mr-2">→</span>
+                <span>Review and Book</span>
               </div>
             </div>
           </div>
         </div>
-        
-        <!-- {/* Car selection header */} -->
-        <div class="w-full py-8 px-4 md:px-8 lg:px-12">
-          <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
-              <h1 class="text-2xl font-bold text-rental-primary mb-4 md:mb-0">Choose your Car</h1>
-              
-              <div class="flex flex-wrap gap-2">
-                <div class="flex items-center bg-gray-100 px-3 py-2 rounded">
-                  <span class="mr-2">Transmission</span>
-                  <i data-lucide="chevron-down" size={16} ></i>
-                </div>
-                <div class="flex items-center bg-gray-100 px-3 py-2 rounded">
-                  <span class="mr-2">Seats</span>
-                  <i data-lucide="chevron-down" size={16} ></i>
-                </div>
-                <div class="flex items-center bg-gray-100 px-3 py-2 rounded">
-                  <span class="mr-2">Vehicle type</span>
-                  <i data-lucide="chevron-down" size={16} ></i>
-                </div>
-                <div class="flex items-center bg-gray-100 px-3 py-2 rounded">
-                  <span class="mr-2">Price range</span>
-                  <i data-lucide="chevron-down" size={16} ></i>
-                </div>
-                <button class="flex items-center bg-gray-300 px-4 py-2 rounded">
-                  <i data-lucide="filter" size={16} class="mr-2" ></i>
-                  <span>Filter</span>
-                </button>
+      </div>
+
+      <!-- {/* Car selection header */} -->
+      <div class="w-full py-8 px-4 md:px-8 lg:px-12">
+        <div class="max-w-7xl mx-auto">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+            <h1 class="text-2xl font-bold text-rental-primary mb-4 md:mb-0">Choose your Car</h1>
+
+            <div class="flex flex-wrap gap-2">
+              <div class="flex items-center bg-gray-100 px-3 py-2 rounded">
+                <span class="mr-2">Transmission</span>
+                <i data-lucide="chevron-down" size={16}></i>
               </div>
+              <div class="flex items-center bg-gray-100 px-3 py-2 rounded">
+                <span class="mr-2">Seats</span>
+                <i data-lucide="chevron-down" size={16}></i>
+              </div>
+              <div class="flex items-center bg-gray-100 px-3 py-2 rounded">
+                <span class="mr-2">Vehicle type</span>
+                <i data-lucide="chevron-down" size={16}></i>
+              </div>
+              <div class="flex items-center bg-gray-100 px-3 py-2 rounded">
+                <span class="mr-2">Price range</span>
+                <i data-lucide="chevron-down" size={16}></i>
+              </div>
+              <button class="flex items-center bg-gray-300 px-4 py-2 rounded">
+                <i data-lucide="filter" size={16} class="mr-2"></i>
+                <span>Filter</span>
+              </button>
             </div>
-            
-            <!-- {/* Car list */} -->
-            <div class="space-y-6">
-              <!-- {cars.map(car => ( -->
-                <div key={car.id} class="bg-gray-200 p-6 rounded">
-                  <div class="flex flex-col md:flex-row justify-between">
-                    <div class="flex flex-col md:flex-row">
-                      <div class="w-full md:w-48 h-48 bg-white flex items-center justify-center mb-4 md:mb-0 md:mr-6">
-                        <img src="" alt="model" class="w-full h-full object-contain p-4" />
-                      </div>
-                      
-                      <div>
-                        <h2 class="text-xl font-bold text-rental-primary mb-4">MERCEDES A-CLASS</h2>
-                        <div class="flex flex-wrap gap-x-6 gap-y-2 mb-4">
-                          <span>4 seats</span>
-                          <span>5 doors</span>
-                          <span>Automatic</span>
-                          <span>Petrol/Diesel</span>
-                        </div>
-                        <button class="text-rental-primary font-medium flex items-center">
-                          <span>More details</span>
-                          <i data-lucide="chevron-down" size={16} class="ml-1" ></i>
-                        </button>
-                      </div>
+          </div>
+
+          <!-- {/* Car list */} -->
+          <div class="space-y-6">
+            <!-- {cars.map(car => ( -->
+            <div key={car.id} class="bg-gray-200 p-6 rounded">
+              <div class="flex flex-col md:flex-row justify-between">
+                <div class="flex flex-col md:flex-row">
+                  <div class="w-full md:w-48 h-48 bg-white flex items-center justify-center mb-4 md:mb-0 md:mr-6">
+                    <img src="" alt="model" class="w-full h-full object-contain p-4" />
+                  </div>
+
+                  <div>
+                    <h2 class="text-xl font-bold text-rental-primary mb-4">MERCEDES A-CLASS</h2>
+                    <div class="flex flex-wrap gap-x-6 gap-y-2 mb-4">
+                      <span>4 seats</span>
+                      <span>5 doors</span>
+                      <span>Automatic</span>
+                      <span>Petrol/Diesel</span>
                     </div>
-                    
-                    <div class="mt-6 md:mt-0 flex flex-col items-end">
-                      <div class="text-xl font-bold mb-4">£69.50 / day</div>
-                      <a href="/extras" class="bg-gray-300 text-rental-primary px-6 py-3 rounded hover:bg-gray-400 transition-colors">
-                        Select
-                      </a>
-                    </div>
+                    <button class="text-rental-primary font-medium flex items-center">
+                      <span>More details</span>
+                      <i data-lucide="chevron-down" size={16} class="ml-1"></i>
+                    </button>
                   </div>
                 </div>
-              <!-- ))} -->
+
+                <div class="mt-6 md:mt-0 flex flex-col items-end">
+                  <div class="text-xl font-bold mb-4">£69.50 / day</div>
+                  <a href="/extras"
+                    class="bg-gray-300 text-rental-primary px-6 py-3 rounded hover:bg-gray-400 transition-colors">
+                    Select
+                  </a>
+                </div>
+              </div>
             </div>
+            <!-- ))} -->
           </div>
         </div>
-      </main>
-    </div>
-    <script type="module" src="/src/cars.js"></script>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="/src/cars.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
 </body>
+
 </html>

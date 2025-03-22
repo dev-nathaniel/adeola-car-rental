@@ -17,6 +17,27 @@ if (token) {
     // Redirect to login page
 }
 
+// Retrieve data from localStorage
+const pickupLocation = localStorage.getItem('pickupLocation');
+const returnLocation = localStorage.getItem('returnLocation');
+const pickupDate = localStorage.getItem('pickupDate');
+const pickupTime = localStorage.getItem('pickupTime');
+const returnDate = localStorage.getItem('returnDate');
+const returnTime = localStorage.getItem('returnTime');
+
+// Use the retrieved data (e.g., display it on the page)
+console.log('Pickup Location:', pickupLocation);
+console.log('Return Location:', returnLocation);
+console.log('Pickup Date:', pickupDate);
+console.log('Pickup Time:', pickupTime);
+console.log('Return Date:', returnDate);
+console.log('Return Time:', returnTime);
+
+const date = document.getElementById('rentDate')
+const location = document.getElementById('rentLocation')
+
+date.textContent = `${pickupDate} - ${returnDate}`
+location.textContent = `${pickupLocation} - ${returnLocation}`
 
 // Function to handle logout
 function handleLogout() {
