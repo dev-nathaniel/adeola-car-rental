@@ -105,19 +105,19 @@ const populateCart = () => {
                   </div>
                   <div>
                     <div class="flex items-center">
-                      <h2 class="text-lg font-bold">${upgradeId ? upgradeOptions.find((upgrade)=>upgrade.id == upgradeId).name : cars.find((car)=>car.id == carId).name}</h2>
+                      <h2 class="text-lg font-bold">${upgradeId ? upgradeOptions.find((upgrade)=>upgrade.id == upgradeId)?.name : cars.find((car)=>car.id == carId)?.name}</h2>
                       <button class="ml-2 text-rental-primary">
                         <i data-lucide="edit" size={16} ></i>
                       </button>
                     </div>
                     <div class="text-sm mt-1">
-                      <span>${upgradeId ? upgradeOptions.find((upgrade)=>upgrade.id == upgradeId).seats : cars.find((car)=>car.id == carId).seats} seats</span>
+                      <span>${upgradeId ? upgradeOptions.find((upgrade)=>upgrade.id == upgradeId)?.seats : cars.find((car)=>car.id == carId)?.seats} seats</span>
                       <span class="mx-2">•</span>
-                      <span>${upgradeId ? upgradeOptions.find((upgrade)=>upgrade.id == upgradeId).doors : cars.find((car)=>car.id == carId).doors} doors</span>
+                      <span>${upgradeId ? upgradeOptions.find((upgrade)=>upgrade.id == upgradeId)?.doors : cars.find((car)=>car.id == carId)?.doors} doors</span>
                       <span class="mx-2">•</span>
-                      <span>${upgradeId ? upgradeOptions.find((upgrade)=>upgrade.id == upgradeId).transmission : cars.find((car)=>car.id == carId).transmission}</span>
+                      <span>${upgradeId ? upgradeOptions.find((upgrade)=>upgrade.id == upgradeId)?.transmission : cars.find((car)=>car.id == carId)?.transmission}</span>
                       <span class="mx-2">•</span>
-                      <span>${upgradeId ? upgradeOptions.find((upgrade)=>upgrade.id == upgradeId).fuel : cars.find((car)=>car.id == carId).fuel}</span>
+                      <span>${upgradeId ? upgradeOptions.find((upgrade)=>upgrade.id == upgradeId)?.fuel : cars.find((car)=>car.id == carId)?.fuel}</span>
                     </div>
                     
                     <div class="mt-4">
@@ -130,7 +130,7 @@ const populateCart = () => {
                       <ul class="mt-1">
                           <li key={index} class="flex items-center text-sm">
                             <span class="mr-2">•</span>
-                            <span>${additionalExtras.find((extra)=>extra.id == extraId).name}</span>
+                            <span>${additionalExtras.find((extra)=>extra.id == extraId)?.name}</span>
                           </li>
                       </ul>
                     </div>
