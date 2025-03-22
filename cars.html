@@ -120,9 +120,9 @@
           </div>
 
           <!-- {/* Car list */} -->
-          <div class="space-y-6">
+          <div class="car-list space-y-6">
             <!-- {cars.map(car => ( -->
-            <div key={car.id} class="bg-gray-200 p-6 rounded">
+            <!-- <div key={car.id} class="bg-gray-200 carItem p-6 rounded">
               <div class="flex flex-col md:flex-row justify-between">
                 <div class="flex flex-col md:flex-row">
                   <div class="w-full md:w-48 h-48 bg-white flex items-center justify-center mb-4 md:mb-0 md:mr-6">
@@ -147,12 +147,108 @@
                 <div class="mt-6 md:mt-0 flex flex-col items-end">
                   <div class="text-xl font-bold mb-4">£69.50 / day</div>
                   <a href="/extras"
-                    class="bg-gray-300 text-rental-primary px-6 py-3 rounded hover:bg-gray-400 transition-colors">
+                    class="select-car bg-gray-300 text-rental-primary px-6 py-3 rounded hover:bg-gray-400 transition-colors">
                     Select
                   </a>
                 </div>
               </div>
             </div>
+
+            <div key={car.id} class="bg-gray-200 carItem p-6 rounded">
+              <div class="flex flex-col md:flex-row justify-between">
+                <div class="flex flex-col md:flex-row">
+                  <div class="w-full md:w-48 h-48 bg-white flex items-center justify-center mb-4 md:mb-0 md:mr-6">
+                    <img src="" alt="model" class="w-full h-full object-contain p-4" />
+                  </div>
+
+                  <div>
+                    <h2 class="text-xl font-bold text-rental-primary mb-4">VAUXHALL CORSA</h2>
+                    <div class="flex flex-wrap gap-x-6 gap-y-2 mb-4">
+                      <span>4 seats</span>
+                      <span>5 doors</span>
+                      <span>Manual</span>
+                      <span>Petrol/Diesel</span>
+                    </div>
+                    <button class="text-rental-primary font-medium flex items-center">
+                      <span>More details</span>
+                      <i data-lucide="chevron-down" size={16} class="ml-1"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="mt-6 md:mt-0 flex flex-col items-end">
+                  <div class="text-xl font-bold mb-4">£60.70 / day</div>
+                  <a href="/extras"
+                    class="bg-gray-300 select-car text-rental-primary px-6 py-3 rounded hover:bg-gray-400 transition-colors">
+                    Select
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div key={car.id} class="bg-gray-200 carItem p-6 rounded">
+              <div class="flex flex-col md:flex-row justify-between">
+                <div class="flex flex-col md:flex-row">
+                  <div class="w-full md:w-48 h-48 bg-white flex items-center justify-center mb-4 md:mb-0 md:mr-6">
+                    <img src="" alt="model" class="w-full h-full object-contain p-4" />
+                  </div>
+
+                  <div>
+                    <h2 class="text-xl font-bold text-rental-primary mb-4">MERCEDES A-CLASS</h2>
+                    <div class="flex flex-wrap gap-x-6 gap-y-2 mb-4">
+                      <span>4 seats</span>
+                      <span>5 doors</span>
+                      <span>Automatic</span>
+                      <span>Petrol/Diesel</span>
+                    </div>
+                    <button class="text-rental-primary font-medium flex items-center">
+                      <span>More details</span>
+                      <i data-lucide="chevron-down" size={16} class="ml-1"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="mt-6 md:mt-0 flex flex-col items-end">
+                  <div class="text-xl font-bold mb-4">£69.50 / day</div>
+                  <a href="/extras"
+                    class="bg-gray-300 select-car text-rental-primary px-6 py-3 rounded hover:bg-gray-400 transition-colors">
+                    Select
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div key={car.id} class="bg-gray-200 carItem p-6 rounded">
+              <div class="flex flex-col md:flex-row justify-between">
+                <div class="flex flex-col md:flex-row">
+                  <div class="w-full md:w-48 h-48 bg-white flex items-center justify-center mb-4 md:mb-0 md:mr-6">
+                    <img src="" alt="model" class="w-full h-full object-contain p-4" />
+                  </div>
+
+                  <div>
+                    <h2 class="text-xl font-bold text-rental-primary mb-4">MERCEDES A-CLASS</h2>
+                    <div class="flex flex-wrap gap-x-6 gap-y-2 mb-4">
+                      <span>4 seats</span>
+                      <span>5 doors</span>
+                      <span>Automatic</span>
+                      <span>Petrol/Diesel</span>
+                    </div>
+                    <button class="text-rental-primary font-medium flex items-center">
+                      <span>More details</span>
+                      <i data-lucide="chevron-down" size={16} class="ml-1"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="mt-6 md:mt-0 flex flex-col items-end">
+                  <div class="text-xl font-bold mb-4">£69.50 / day</div>
+                  <a href="/extras"
+                    class="bg-gray-300 select-car text-rental-primary px-6 py-3 rounded hover:bg-gray-400 transition-colors">
+                    Select
+                  </a>
+                </div>
+              </div>
+            </div> -->
             <!-- ))} -->
           </div>
         </div>

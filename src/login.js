@@ -128,7 +128,12 @@ document.getElementById("loginForm").addEventListener("submit", async function (
             } else {
             localStorage.setItem('accessToken', accessToken);
             localStorage.setItem('userDetails', JSON.stringify({...others}));
-            window.location.href = '/'
+        const checkingout = localStorage.getItem('checkingout')
+            if (checkingout) {
+                window.location.href = '/checkout'
+            } else {
+                window.location.href = '/'
+            }
             }
         } else {
             alert(data.error)

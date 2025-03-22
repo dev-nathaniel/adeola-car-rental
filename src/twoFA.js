@@ -83,7 +83,12 @@ async function submitCode() {
             // Redirect or perform other actions as needed
             const { accessToken, ...others } = await response.json()
             localStorage.setItem('accessToken', accessToken);
+        const checkingout = localStorage.getItem('checkingout')
+        if (checkingout) {
+            window.location.href = '/checkout'
+        } else {
             window.location.href = '/'
+        }
         } else {
             // Handle error response
             alert('Verification failed. Please try again.');
