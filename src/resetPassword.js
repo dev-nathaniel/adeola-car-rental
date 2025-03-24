@@ -117,7 +117,7 @@ document.getElementById("resetForm").addEventListener("submit", async function (
       const response = await fetch("https://adeola-car-rental-server.onrender.com/reset-password", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ token, password, id })
+          body: JSON.stringify({ token, newPassword: password, id })
       });
       submitButton.textContent = 'Reset Password'
 
