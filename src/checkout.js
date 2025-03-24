@@ -72,9 +72,9 @@ const cars = [
 ];
 
 const upgradeOptions = [
-  { id: 1, name: 'VAUXHALL ASTRA', improvement: 'More leg room', price: 7.30, seats: 5, doors: 5, transmission: 'Automatic', fuel: 'Petrol' },
-  { id: 2, name: 'PEUGEOT 208', improvement: 'Luxury', price: 10.30, seats: 5, doors: 5, transmission: 'Manual', fuel: 'Diesel' },
-  { id: 3, name: 'VAUXHALL MOKKA', improvement: 'Modern design', price: 12.30, seats: 5, doors: 5, transmission: 'Automatic', fuel: 'Petrol' },
+  { id: 1, image: '/astra.jpeg', name: 'VAUXHALL ASTRA', improvement: 'More leg room', price: 7.30, seats: 5, doors: 5, transmission: 'Automatic', fuel: 'Petrol' },
+  { id: 2, image: '/208.jpeg', name: 'PEUGEOT 208', improvement: 'Luxury', price: 10.30, seats: 5, doors: 5, transmission: 'Manual', fuel: 'Diesel' },
+  { id: 3, image: '/mokka.jpeg', name: 'VAUXHALL MOKKA', improvement: 'Modern design', price: 12.30, seats: 5, doors: 5, transmission: 'Automatic', fuel: 'Petrol' },
 ];
 
 //if they want to move to home page you can tell them it will be added to their cart
@@ -93,7 +93,7 @@ const populateCart = () => {
                       >
                         <div className="absolute inset-0">
                           <img 
-                          src=${cars.find((car)=>car.id == carId).image}
+                          src=${upgradeId ? upgradeOptions.find((upgrade)=>upgrade.id == upgradeId).image : cars.find((car)=>car.id == carId).image}
                           alt="Car" 
                           className="w-full h-full object-cover"
                         />

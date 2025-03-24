@@ -130,8 +130,10 @@ document.getElementById("loginForm").addEventListener("submit", async function (
             localStorage.setItem('userDetails', JSON.stringify({...others}));
         const checkingout = localStorage.getItem('checkingout')
             if (checkingout== true) {
+                localStorage.setItem('checkingout', false)
                 window.location.href = '/checkout'
             } else {
+                localStorage.setItem('checkingout', false)
                 window.location.href = '/'
             }
             }

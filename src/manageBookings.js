@@ -3,6 +3,10 @@ import { createIcons, icons } from 'lucide';
 // Caution, this will import all the icons and bundle them.
 createIcons({ icons });
 
+{/* <button class="cursor-pointer px-4 py-2 bg-[#F6F6F7] text-[#1A1F2C] rounded hover:bg-[#E2E8F0] transition-colors">
+    Modify Booking
+  </button> */}
+
 // Check if token exists in localStorage
 const token = localStorage.getItem('accessToken');
 if (token) {
@@ -42,9 +46,9 @@ const protectionOptions = [
   ];
   
   const upgradeOptions = [
-    { id: 1, name: 'VAUXHALL ASTRA', improvement: 'More leg room', price: 7.30, seats: 5, doors: 5, transmission: 'Automatic', fuel: 'Petrol' },
-    { id: 2, name: 'PEUGEOT 208', improvement: 'Luxury', price: 10.30, seats: 5, doors: 5, transmission: 'Manual', fuel: 'Diesel' },
-    { id: 3, name: 'VAUXHALL MOKKA', improvement: 'Modern design', price: 12.30, seats: 5, doors: 5, transmission: 'Automatic', fuel: 'Petrol' },
+    { id: 1, image: '/astra.jpeg', name: 'VAUXHALL ASTRA', improvement: 'More leg room', price: 7.30, seats: 5, doors: 5, transmission: 'Automatic', fuel: 'Petrol' },
+    { id: 2, image: '/208.jpeg', name: 'PEUGEOT 208', improvement: 'Luxury', price: 10.30, seats: 5, doors: 5, transmission: 'Manual', fuel: 'Diesel' },
+    { id: 3, image: '/mokka.jpeg', name: 'VAUXHALL MOKKA', improvement: 'Modern design', price: 12.30, seats: 5, doors: 5, transmission: 'Automatic', fuel: 'Petrol' },
   ];
   
 
@@ -121,16 +125,18 @@ const renderBookings = (bookings) => {
         // Map through bookings and create HTML for each booking
         bookings.forEach(booking => {
             const isCancelled = booking.status === 'cancelled'; // Adjust based on your status logic
-            const car = cars.find((car)=>car.id == booking.carId)
+            const car = cars.find((car)=>car.id == booking.carId);
+            const upgrade = upgradeOptions.find((upgrade)=>upgrade.id == booking.upgradeId);
+            const vehicle = upgrade ? upgrade : car; // Use upgrade if available, otherwise use car
             const bookingElement = `
                 <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       <div class="flex flex-col md:flex-row">
         <div class="md:w-1/3 p-4">
-          <img src=${car.image} alt=${car.name} class="w-full h-40 object-cover rounded" />
+          <img src=${vehicle.image} alt=${vehicle.name} class="w-full h-40 object-cover rounded" />
         </div>
         <div class="md:w-2/3 p-4">
           <div class="flex justify-between items-start">
-            <h3 class="text-xl font-bold">${car.name}</h3>
+            <h3 class="text-xl font-bold">${vehicle.name}</h3>
             <span class='px-3 py-1 rounded-full text-xs font-medium  ${isCancelled ? 'text-red-600 bg-red-100' : 'text-green-800 bg-green-100'}'>
               ${booking.status}
             </span>
@@ -158,9 +164,7 @@ const renderBookings = (bookings) => {
           <div class="mt-4 flex space-x-3">
           ${isCancelled ? `` :
               `<div>
-                <button class="cursor-pointer px-4 py-2 bg-[#F6F6F7] text-[#1A1F2C] rounded hover:bg-[#E2E8F0] transition-colors">
-                  Modify Booking
-                </button>
+                
                 <button data-booking-id=${booking._id} id='cancelButton' class="cursor-pointer px-4 py-2 bg-red-50 text-red-600 rounded hover:bg-red-100 transition-colors">
                   Cancel
                 </button>
