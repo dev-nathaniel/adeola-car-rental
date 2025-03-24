@@ -198,8 +198,9 @@ const cancelBooking = async (bookingId) => {
                 throw new Error('Failed to cancel booking');
             }
             alert('Booking cancelled successfully.');
+            location.reload();
         } catch (error) {
-            console.error('Error canceling booking:', error);
+            console.log('Error canceling booking:', error);
             alert('Failed to cancel booking. Please try again.');
         }
     }
