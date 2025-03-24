@@ -72,7 +72,7 @@ document.getElementById('logout').addEventListener('click', function (event) {
 const fetchBookings = async () => {
     try {
         const token = localStorage.getItem('accessToken');
-        const response = await fetch('https://adeola-car-rental-server.onrender.com/bookings', { // Replace with your API URL
+        const response = await fetch('http://localhost:3000/bookings', { // Replace with your API URL
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`
