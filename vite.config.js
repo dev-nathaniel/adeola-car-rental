@@ -13,7 +13,9 @@ export default defineConfig({
         upgrade: '/upgrade.html',
         verify: '/verify.html',
         mfa: '/twoFA.html',
-        bookings: '/manageBookings.html'
+        bookings: '/manageBookings.html',
+        resetpassword: '/resetPassword.html',
+        forgotpassword: '/forgotPassword.html'
       }
     }
   },

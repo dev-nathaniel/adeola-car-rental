@@ -27,8 +27,8 @@
             <input type="checkbox" id="menu-toggle" class="hidden" />
             
             <!-- {/* Navigation links */} -->
-            <div class="nav-links absolute left-0 right-0 top-full bg-white shadow-md lg:shadow-none lg:relative lg:top-auto lg:bg-transparent lg:flex lg:space-x-8">
-              <a href="/manageBookings.html" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] border-b lg:border-b-0 transition-colors">
+            <div class="nav-links absolute z-50 left-0 right-0 top-full bg-white shadow-md lg:shadow-none lg:relative lg:top-auto lg:bg-transparent lg:flex lg:space-x-8">
+              <a href="/bookings" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] border-b lg:border-b-0 transition-colors">
                 Manage Bookings
               </a>
               <a href="/" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] border-b lg:border-b-0 transition-colors">
@@ -37,11 +37,14 @@
               <a href="/" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] border-b lg:border-b-0 transition-colors">
                 Contact
               </a>
-              <a href="/login" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] border-b lg:border-b-0 transition-colors">
+              <a id="login" href="/login" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] border-b lg:border-b-0 transition-colors">
                 Login
               </a>
-              <a href="/signup" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] font-medium border-b lg:border-b-0 transition-colors">
+              <a id="signup" href="/signup" class="block py-3 px-6 lg:px-0 hover:text-[#0EA5E9] font-medium border-b lg:border-b-0 transition-colors">
                 Sign Up
+              </a>
+              <a id="logout" href="/signup" class="hidden py-3 px-6 lg:px-0 hover:text-[#0EA5E9] font-medium border-b lg:border-b-0 transition-colors">
+                Log out
               </a>
             </div>
           </div>
@@ -126,7 +129,7 @@
             </button>
             
             <div class="text-center">
-              <a href="/forgot-password" class="text-[#0EA5E9] hover:underline text-sm">
+              <a href="/forgotpassword" class="text-[#0EA5E9] hover:underline text-sm">
                 Forgot Password?
               </a>
             </div>
