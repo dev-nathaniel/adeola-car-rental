@@ -120,7 +120,7 @@ const renderBookings = (bookings) => {
 
         // Map through bookings and create HTML for each booking
         bookings.forEach(booking => {
-            const isConfirmed = booking.status === 'Confirmed'; // Adjust based on your status logic
+            const isCancelled = booking.status === 'cancelled'; // Adjust based on your status logic
             const car = cars.find((car)=>car.id == booking.carId)
             const bookingElement = `
                 <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
@@ -131,7 +131,7 @@ const renderBookings = (bookings) => {
         <div class="md:w-2/3 p-4">
           <div class="flex justify-between items-start">
             <h3 class="text-xl font-bold">${car.name}</h3>
-            <span class='px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800'>
+            <span class='px-3 py-1 rounded-full text-xs font-medium  ${isCancelled ? 'text-red-600 bg-red-100' : 'text-green-800 bg-green-100'}'>
               ${booking.status}
             </span>
           </div>
@@ -156,14 +156,15 @@ const renderBookings = (bookings) => {
           </div>
           
           <div class="mt-4 flex space-x-3">
-              <div>
+          ${isCancelled ? `` :
+              `<div>
                 <button class="cursor-pointer px-4 py-2 bg-[#F6F6F7] text-[#1A1F2C] rounded hover:bg-[#E2E8F0] transition-colors">
                   Modify Booking
                 </button>
-                <button class="cursor-pointer px-4 py-2 bg-red-50 text-red-600 rounded hover:bg-red-100 transition-colors">
+                <button data-booking-id=${booking._id} id='cancelButton' class="cursor-pointer px-4 py-2 bg-red-50 text-red-600 rounded hover:bg-red-100 transition-colors">
                   Cancel
                 </button>
-              </div>
+              </div>`}
             <button class="cursor-pointer px-4 py-2 bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition-colors">
               View Details
             </button>
@@ -179,6 +180,39 @@ const renderBookings = (bookings) => {
         bookingsContainer.appendChild(bookingsWrapper);
     }
 };
+
+// Function to cancel booking
+const cancelBooking = async (bookingId) => {
+    if (confirm('Are you sure you want to cancel this booking?')) {
+        try {
+            const token = localStorage.getItem('accessToken');
+            const response = await fetch(`https://adeola-car-rental-server.onrender.com/bookings/${bookingId}/status`, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ status: 'cancelled' })
+            });
+            if (!response.ok) {
+                throw new Error('Failed to cancel booking');
+            }
+            alert('Booking cancelled successfully.');
+        } catch (error) {
+            console.error('Error canceling booking:', error);
+            alert('Failed to cancel booking. Please try again.');
+        }
+    }
+};
+
+// Add event listener for cancel button
+document.addEventListener('click', function(event) {
+    if(event.target.id == 'cancelButton') {
+        event.preventDefault();
+        const bookingId = event.target.getAttribute('data-booking-id');
+        cancelBooking(bookingId);
+    }
+});
 
 // Initialize the page
 const init = async () => {
