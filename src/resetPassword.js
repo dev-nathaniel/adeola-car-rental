@@ -6,6 +6,8 @@ createIcons({ icons });
 const urlParams = new URLSearchParams(window.location.search);
 const token = urlParams.get('token');
 const id = urlParams.get('id');
+const errorMessageConfirmPassword = document.getElementById("confirmPasswordError");
+const errorMessagePassword = document.getElementById("passwordError");
 
 // Check if token exists in localStorage
 const localtoken = localStorage.getItem('accessToken');
@@ -24,6 +26,12 @@ if (localtoken) {
   document.getElementById('signup').style.display = 'block'
   document.getElementById('logout').style.display = 'none'
 }
+
+// Function to validate password
+const isValidPassword = (password) => {
+  const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&.]{8,}$/; // At least 8 characters, 1 letter, 1 number, 1 special character
+  return passwordPattern.test(password);
+};
 
 document.getElementById("resetForm").addEventListener("submit", async function (event) {
   event.preventDefault(); // Prevent form refresh
