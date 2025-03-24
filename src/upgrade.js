@@ -24,9 +24,9 @@ if (token) {
 
 // Example upgrade options
 const upgradeOptions = [
-  { id: 1, name: 'VAUXHALL ASTRA', improvement: 'More leg room', price: 7.30, seats: 5, doors: 5, transmission: 'Automatic', fuel: 'Petrol' },
-  { id: 2, name: 'PEUGEOT 208', improvement: 'Luxury', price: 10.30, seats: 5, doors: 5, transmission: 'Manual', fuel: 'Diesel' },
-  { id: 3, name: 'VAUXHALL MOKKA', improvement: 'Modern design', price: 12.30, seats: 5, doors: 5, transmission: 'Automatic', fuel: 'Petrol' },
+  { id: 1, image: '/astra.jpeg', name: 'VAUXHALL ASTRA', improvement: 'More leg room', price: 7.30, seats: 5, doors: 5, transmission: 'Automatic', fuel: 'Petrol' },
+  { id: 2, image: '/208.jpeg', name: 'PEUGEOT 208', improvement: 'Luxury', price: 10.30, seats: 5, doors: 5, transmission: 'Manual', fuel: 'Diesel' },
+  { id: 3, image: '/mokka.jpeg', name: 'VAUXHALL MOKKA', improvement: 'Modern design', price: 12.30, seats: 5, doors: 5, transmission: 'Automatic', fuel: 'Petrol' },
 ];
 
 // Function to populate upgrade options
@@ -41,11 +41,15 @@ const populateUpgradeOptions = () => {
             <div class="flex flex-col md:flex-row">
                     <div class="w-full md:w-1/4 mb-4 md:mb-0">
                       <div class="w-32 h-32 bg-gray-300 flex items-center justify-center mx-auto md:mx-0">
-                        <div class="w-full h-full flex items-center justify-center border border-gray-400">
-                          <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" strokeWidth="1" fill="none">
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                          </svg>
+                        <div
+                          class="relative w-full h-full pb-[100%]"
+                        >
+                          <div class="absolute inset-0">
+                            <img
+                            src=${option.image}
+                            class="w-full h-full object-cover"
+                          />
+                          </div>
                         </div>
                       </div>
                     </div>

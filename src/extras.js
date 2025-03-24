@@ -164,6 +164,8 @@ document.getElementById('reviewButton').addEventListener('click', function (even
         return; // Exit the function
     }
 
+    document.getElementById('reviewButton').textContent = 'Loading...'
+
     // Verify token before checking if all fields are filled
     // const token = localStorage.getItem('accessToken');
     fetch('https://adeola-car-rental-server.onrender.com/verifytoken', {
@@ -176,9 +178,12 @@ document.getElementById('reviewButton').addEventListener('click', function (even
         .then(response => {
             if (!response.ok) {
                 // If token is not valid, redirect to login page
+                document.getElementById('reviewButton').textContent = 'Review & Book'
         localStorage.setItem('checkingout', true)
         window.location.href = '/login';
             } else {
+                document.getElementById('reviewButton').textContent = 'Review & Book'
+
                 window.location.href = '/checkout'
                 // Check if all fields are filled
                 // const fields = [
@@ -204,7 +209,8 @@ document.getElementById('reviewButton').addEventListener('click', function (even
             }
         })
         .catch(error => {
-            console.error('Error verifying token:', error);
+                document.getElementById('reviewButton').textContent = 'Review & Book'
+                console.error('Error verifying token:', error);
             // window.location.href = '/login.html'; // Redirect to login on error
         });
 });

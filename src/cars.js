@@ -45,11 +45,11 @@ location.textContent = `${pickupLocation} - ${returnLocation}`
 
 
 const cars = [
-    { id: 1, name: 'MERCEDES A-CLASS', image: '/path/to/suv-image.jpg', seats: 5, doors: 5, transmission: 'Automatic', fuel: 'Petrol', price: 69.50 },
-    { id: 2, name: 'VAUXHALL CORSA', image: '/path/to/sedan-image.jpg', seats: 5, doors: 5, transmission: 'Manual', fuel: 'Petrol', price: 60.70 },
-    { id: 3, name: 'RANGE ROVER', image: '/path/to/hatchback-image.jpg', seats: 5, doors: 5, transmission: 'Automatic', fuel: 'Diesel', price: 80.00 },
-    { id: 4, name: 'ROLLS ROYCE CULLINAN', image: '/path/to/convertible-image.jpg', seats: 4, doors: 2, transmission: 'Automatic', fuel: 'Petrol', price: 150.00 },
-    { id: 5, name: 'TESLA MODEL S', image: '/path/to/tesla-image.jpg', seats: 5, doors: 5, transmission: 'Automatic', fuel: 'Electric', price: 100.00 },
+    { id: 1, name: 'MERCEDES A-CLASS', image: '/mercedes.jpg', seats: 5, doors: 5, transmission: 'Automatic', fuel: 'Petrol', price: 69.50 },
+    { id: 2, name: 'VAUXHALL CORSA', image: '/corsa.jpg', seats: 5, doors: 5, transmission: 'Manual', fuel: 'Petrol', price: 60.70 },
+    { id: 3, name: 'RANGE ROVER', image: '/range.jpg', seats: 5, doors: 5, transmission: 'Automatic', fuel: 'Diesel', price: 80.00 },
+    { id: 4, name: 'ROLLS ROYCE CULLINAN', image: '/rollsroyce.jpg', seats: 4, doors: 2, transmission: 'Automatic', fuel: 'Petrol', price: 150.00 },
+    { id: 5, name: 'TESLA MODEL S', image: '/tesla.jpg', seats: 5, doors: 5, transmission: 'Automatic', fuel: 'Electric', price: 100.00 },
     // Add more cars as needed
 ];
 
@@ -65,7 +65,7 @@ const populateCarList = () => {
             <div class="flex flex-col md:flex-row justify-between">
                 <div class="flex flex-col md:flex-row">
                   <div class="w-full md:w-48 h-48 bg-white flex items-center justify-center mb-4 md:mb-0 md:mr-6">
-                    <img src="" alt="model" class="w-full h-full object-contain p-4" />
+                    <img src=${car.image} alt="model" class="w-full h-full object-contain p-4" />
                   </div>
 
                   <div>
