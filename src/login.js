@@ -124,7 +124,7 @@ document.getElementById("loginForm").addEventListener("submit", async function (
             const { accessToken, ...others } = data
             if (!accessToken) {
             localStorage.setItem('userDetails', JSON.stringify({...others}));
-                window.location.href = '/mfa'
+                window.location.href = '/twoFA'
             } else {
             localStorage.setItem('accessToken', accessToken);
             localStorage.setItem('userDetails', JSON.stringify({...others}));

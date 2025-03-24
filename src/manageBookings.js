@@ -65,7 +65,7 @@ function handleLogout() {
 document.getElementById('logout').addEventListener('click', function (event) {
     event.preventDefault(); // Prevent default link behavior
     handleLogout(); // Call the logout function
-    window.location.href = '/bookings';
+    window.location.href = '/manageBookings';
 });
 
 // Function to fetch bookings from the API
@@ -125,18 +125,17 @@ const renderBookings = (bookings) => {
         // Map through bookings and create HTML for each booking
         bookings.forEach(booking => {
             const isCancelled = booking.status === 'cancelled'; // Adjust based on your status logic
-            const car = cars.find((car)=>car.id == booking.carId);
-            const upgrade = upgradeOptions.find((upgrade)=>upgrade.id == booking.upgradeId);
-            const vehicle = upgrade ? upgrade : car; // Use upgrade if available, otherwise use car
+            const car = cars.find((car)=>car.id == booking.carId)
+            const upgrade = upgradeOptions.find((upgrade)=>upgrade.id == booking.upgradeId)
             const bookingElement = `
                 <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       <div class="flex flex-col md:flex-row">
         <div class="md:w-1/3 p-4">
-          <img src=${vehicle.image} alt=${vehicle.name} class="w-full h-40 object-cover rounded" />
+          <img src=${car.image} alt=${car.name} class="w-full h-40 object-cover rounded" />
         </div>
         <div class="md:w-2/3 p-4">
           <div class="flex justify-between items-start">
-            <h3 class="text-xl font-bold">${vehicle.name}</h3>
+            <h3 class="text-xl font-bold">${car.name}</h3>
             <span class='px-3 py-1 rounded-full text-xs font-medium  ${isCancelled ? 'text-red-600 bg-red-100' : 'text-green-800 bg-green-100'}'>
               ${booking.status}
             </span>
