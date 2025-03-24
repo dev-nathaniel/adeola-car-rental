@@ -129,7 +129,7 @@ document.getElementById("loginForm").addEventListener("submit", async function (
             localStorage.setItem('accessToken', accessToken);
             localStorage.setItem('userDetails', JSON.stringify({...others}));
         const checkingout = localStorage.getItem('checkingout')
-            if (checkingout) {
+            if (checkingout== true) {
                 window.location.href = '/checkout'
             } else {
                 window.location.href = '/'

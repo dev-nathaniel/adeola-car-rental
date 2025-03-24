@@ -69,14 +69,14 @@ const populateCarList = () => {
                   </div>
 
                   <div>
-                    <h2 class="text-xl font-bold text-rental-primary mb-4">${car.name}</h2>
+                    <h2 class="text-xl font-bold text-[#1A1F2C] mb-4">${car.name}</h2>
                     <div class="flex flex-wrap gap-x-6 gap-y-2 mb-4">
                       <span>${car.seats} seats</span>
                       <span>${car.doors} doors</span>
                       <span>${car.transmission}</span>
                       <span>${car.fuel}</span>
                     </div>
-                    <button class="text-rental-primary font-medium flex items-center">
+                    <button class="text-[#1A1F2C] font-medium flex items-center">
                       <span>More details</span>
                       <i data-lucide="chevron-down" size={16} class="ml-1"></i>
                     </button>
@@ -87,7 +87,7 @@ const populateCarList = () => {
                   <div class="text-xl font-bold mb-4">£${car.price} / day</div>
                   <a href="/extras"
                     data-car-id=${car.id}
-                    class="select-car bg-gray-300 text-rental-primary px-6 py-3 rounded hover:bg-gray-400 transition-colors">
+                    class="select-car bg-gray-300 text-[#1A1F2C] px-6 py-3 rounded hover:bg-gray-400 transition-colors">
                     Select
                   </a>
                 </div>

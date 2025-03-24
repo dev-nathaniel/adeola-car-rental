@@ -54,8 +54,8 @@ const populateProtectionOptions = () => {
                       <span class="font-medium">${typeof option.price === 'number' ? '£' + option.price : option.price}</span>
                       
                       <div class="flex items-center">
-                        <span class="text-rental-primary mr-1">More details</span>
-                        <i data-lucide="chevron-down" size={16} class="text-rental-primary" ></i>
+                        <span class="text-[#1A1F2C] mr-1">More details</span>
+                        <i data-lucide="chevron-down" size={16} class="text-[#1A1F2C]" ></i>
                       </div>
                       
                       <button
@@ -91,8 +91,8 @@ const populateAdditionalExtras = () => {
                       
 
                       <div class="flex items-center">
-                        <span class="text-rental-primary mr-1">More details</span>
-                        <i data-lucide="chevron-down" size={16} class="text-rental-primary" ></i>
+                        <span class="text-[#1A1F2C] mr-1">More details</span>
+                        <i data-lucide="chevron-down" size={16} class="text-[#1A1F2C]" ></i>
                       </div>
 
                       <button data-extra-id=${extra.id} class="select-extra flex items-center cursor-pointer bg-gray-300 hover:bg-gray-400 transition-colors px-4 py-2 rounded">

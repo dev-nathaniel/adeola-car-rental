@@ -102,7 +102,7 @@ const populateCart = () => {
                     </div>
                     <a 
                       href="/upgrade" 
-                      class="w-20 md:w-24 text-rental-primary border border-rental-primary text-center py-1 text-xs md:text-sm flex items-center justify-center hover:bg-gray-100 transition-colors"
+                      class="w-20 md:w-24 text-[#1A1F2C] border border-[#1A1F2C] text-center py-1 text-xs md:text-sm flex items-center justify-center hover:bg-gray-100 transition-colors"
                     >
                       <i data-lucide="arrow-up-right" size={14} class="mr-1" ></i>
                       Upgrade
@@ -111,7 +111,7 @@ const populateCart = () => {
                   <div class="flex-1">
                     <div class="flex items-center">
                       <h2 class="text-base md:text-lg font-bold">${upgradeId ? upgradeOptions.find((upgrade) => upgrade.id == upgradeId)?.name : cars.find((car) => car.id == carId)?.name}</h2>
-                      <button class="ml-2 text-rental-primary">
+                      <button class="ml-2 text-[#1A1F2C]">
                         <i data-lucide="edit" size={16} ></i>
                       </button>
                     </div>
@@ -128,14 +128,14 @@ const populateCart = () => {
                     <div class="mt-3 md:mt-4">
                       <div class="flex items-center">
                         <h3 class="text-sm md:text-base font-medium">Extras</h3>
-                        <button class="ml-2 text-rental-primary">
+                        <button class="ml-2 text-[#1A1F2C]">
                           <i data-lucide="edit" size={16} ></i>
                         </button>
                       </div>
                       <ul class="mt-1">
                           <li key={index} class="flex items-center text-xs md:text-sm">
                             <span class="mr-1 md:mr-2">•</span>
-                            <span>${additionalExtras.find((extra) => extra.id == extraId)?.name}</span>
+                            <span>${additionalExtras.find((extra) => extra.id == extraId)?.name ?? "No extra selected"}</span>
                           </li>
                       </ul>
                     </div>
@@ -156,7 +156,7 @@ const populateCart = () => {
                       ${new Date(pickupDate).toLocaleDateString('en-GB', { weekday: 'short', month: 'short', day: 'numeric' })} • ${pickupTime}
                       <div>${pickupLocation}</div>
                     </div>
-                    <button class="text-rental-primary">
+                    <button class="text-[#1A1F2C]">
                       <i data-lucide="edit" size={16} ></i>
                     </button>
                   </div>
@@ -176,7 +176,7 @@ const populateCart = () => {
                         ${new Date(returnDate).toLocaleDateString('en-GB', { weekday: 'short', month: 'short', day: 'numeric' })} • ${returnTime}
                       <div>${returnLocation}</div>
                     </div>
-                    <button class="text-rental-primary">
+                    <button class="text-[#1A1F2C]">
                       <i data-lucide="edit" size={16} ></i>
                     </button>
                   </div>
@@ -186,7 +186,7 @@ const populateCart = () => {
               <div class="flex justify-end mt-6 border-t pt-4 border-gray-300">
                 <div class="flex items-center">
                   <span class="font-bold mr-4 text-sm md:text-base">Total:</span>
-                  <span class="font-bold text-base md:text-lg">£${cars.find((car) => car.id == carId).price + additionalExtras.find((extra) => extra.id == extraId).price + protectionOptions.find((protection) => protection.id == protectionId).price + (upgradeId ? upgradeOptions.find((upgrade) => upgrade.id == upgradeId).price : 0)}</span>
+                  <span class="font-bold text-base md:text-lg">£${cars.find((car) => car.id == carId).price + (extraId ? additionalExtras.find((extra) => extra.id == extraId).price : 0) + (protectionId ? protectionOptions.find((protection) => protection.id == protectionId).price : 0) + (upgradeId ? upgradeOptions.find((upgrade) => upgrade.id == upgradeId).price : 0)}</span>
                 </div>
               </div>
         `;
@@ -210,39 +210,56 @@ document.querySelector('form').addEventListener('submit', function (event) {
     window.location.href = '/login';
     return; // Exit the function
   }
-
+  document.getElementById('bookButton').textContent = 'Loading...'
   // Verify token before checking if all fields are filled
   // const token = localStorage.getItem('accessToken');
-  fetch('https://adeola-car-rental-server.onrender.com/verifytoken', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    }
-  })
-    .then(response => {
-      if (!response.ok) {
-        // If token is not valid, redirect to login page
-        localStorage.setItem('checkingout', true)
-        alert('You need to sign in to checkout, your order will be saved')
-        window.location.href = '/login';
-      } else {
-        // Check if all fields are filled
-        const fields = [
-          document.getElementById('cardNumber'),
-          document.getElementById('expiryMonth'),
-          document.getElementById('expiryYear'),
-          document.getElementById('cvv'),
-          document.getElementById('nameOnCard'),
-          document.getElementById('country'),
-          document.getElementById('address'),
-          document.getElementById('city'),
-          document.getElementById('postcode')
-        ];
+  // Check if all fields are filled
+  const fields = [
+    document.getElementById('cardNumber'),
+    document.getElementById('expiryMonth'),
+    document.getElementById('expiryYear'),
+    document.getElementById('cvv'),
+    document.getElementById('nameOnCard'),
+    document.getElementById('country'),
+    document.getElementById('address'),
+    document.getElementById('city'),
+    document.getElementById('postcode')
+  ];
 
-        const allFilled = fields.every(field => field.value.trim() !== '');
+  const allFilled = fields.every(field => field.value.trim() !== '');
 
-        if (allFilled) {
+  if (allFilled) {
+    fetch('https://adeola-car-rental-server.onrender.com/book', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify({
+        // Assuming the necessary booking details are here
+        carId, 
+        price: (cars.find((car) => car.id == carId).price + (extraId ? additionalExtras.find((extra) => extra.id == extraId).price : 0) + (protectionId ? protectionOptions.find((protection) => protection.id == protectionId).price : 0) + (upgradeId ? upgradeOptions.find((upgrade) => upgrade.id == upgradeId).price : 0)).toString(),
+        status: 'completed',
+        startDate: new Date(pickupDate + ' ' + pickupTime), 
+        endDate: new Date(returnDate + ' ' + returnTime), 
+        locationReturn: returnLocation, 
+        locationPickUp: pickupLocation, 
+        protectionId: protectionId ? protectionId : null, 
+        extraId: extraId ? extraId : null,
+        upgradeId: upgradeId ? upgradeId : null // Include upgradeId if it exists
+      })
+    })
+      .then(response => {
+        if (response.status === 401 || response.status === 403) {
+          // If token is not valid or booking fails, redirect to login page
+          localStorage.setItem('checkingout', true)
+          document.getElementById('bookButton').textContent = 'Book Now'
+          alert('You need to sign in to checkout, your order will be saved')
+          window.location.href = '/login';
+        } else if (!response.ok) {
+          document.getElementById('bookButton').textContent = 'Book Now'
+          alert('Error booking. Please try again.');
+        } else {
           localStorage.setItem('checkingout', false)
           localStorage.removeItem('selectedCar')
           localStorage.removeItem('selectedExtra')
@@ -254,17 +271,19 @@ document.querySelector('form').addEventListener('submit', function (event) {
           localStorage.removeItem('pickupTime');
           localStorage.removeItem('returnDate');
           localStorage.removeItem('returnTime');
+          document.getElementById('bookButton').textContent = 'Book Now'
           alert('Successfully booked!');
           window.location.href = '/'; // Navigate back to home
-        } else {
-          alert('Please fill in all fields.');
         }
-      }
-    })
-    .catch(error => {
-      console.error('Error verifying token:', error);
-      // window.location.href = '/login.html'; // Redirect to login on error
-    });
+      })
+      .catch(error => {
+        document.getElementById('bookButton').textContent = 'Book Now'
+        console.error('Error booking:', error);
+      });
+  } else {
+    document.getElementById('bookButton').textContent = 'Book Now'
+    alert('Please fill in all fields.');
+  }
 });
 
 // Function to handle logout

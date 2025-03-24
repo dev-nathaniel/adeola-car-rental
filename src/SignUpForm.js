@@ -16,7 +16,7 @@ export const SignUpForm =
           <input
             id="firstName"
             type="text"
-            class="w-full h-12 px-4 border border-rental-border"
+            class="w-full h-12 px-4 border border-[#E2E8F0]"
           />
         </div>
         
@@ -27,7 +27,7 @@ export const SignUpForm =
           <input
             id="lastName"
             type="text"
-            class="w-full h-12 px-4 border border-rental-border"
+            class="w-full h-12 px-4 border border-[#E2E8F0]"
           />
         </div>
         
@@ -38,7 +38,7 @@ export const SignUpForm =
           <input
             id="email"
             type="email"
-            class="w-full h-12 px-4 border border-rental-border"
+            class="w-full h-12 px-4 border border-[#E2E8F0]"
           />
         </div>
         
@@ -50,7 +50,7 @@ export const SignUpForm =
             <input
               id="password"
               type={showPassword ? "text" : "password"}
-              class="w-full h-12 px-4 border border-rental-border pr-12"
+              class="w-full h-12 px-4 border border-[#E2E8F0] pr-12"
             />
             <button
               type="button"
@@ -69,7 +69,7 @@ export const SignUpForm =
           <input
             id="confirmEmail"
             type="email"
-            class="w-full h-12 px-4 border border-rental-border"
+            class="w-full h-12 px-4 border border-[#E2E8F0]"
           />
         </div>
         
@@ -81,7 +81,7 @@ export const SignUpForm =
             <input
               id="confirmPassword"
               type={showConfirmPassword ? "text" : "password"}
-              class="w-full h-12 px-4 border border-rental-border pr-12"
+              class="w-full h-12 px-4 border border-[#E2E8F0] pr-12"
             />
             <button
               type="button"
@@ -113,7 +113,7 @@ export const SignUpForm =
         <div class="md:col-span-2 flex justify-between items-center mt-4">
           <button
             type="submit"
-            class="bg-rental-light hover:bg-rental-border text-rental-primary font-medium py-3 px-6 rounded w-full md:w-auto md:min-w-[200px]"
+            class="bg-[#F6F6F7] hover:bg-[#E2E8F0] text-[#1A1F2C] font-medium py-3 px-6 rounded w-full md:w-auto md:min-w-[200px]"
           >
             Sign Up
           </button>
@@ -153,15 +153,15 @@ export const SignUpForm =
       <footer class="mt-16 pt-8 border-t flex flex-col md:flex-row justify-between items-center text-sm text-rental-muted">
         <div>Copyright 2025 Adeola</div>
         <div class="flex space-x-4 mt-4 md:mt-0">
-          <a to="/terms" class="hover:text-rental-primary">
+          <a to="/terms" class="hover:text-[#1A1F2C]">
             Terms & Conditions
           </a>
           <span>|</span>
-          <a to="/privacy" class="hover:text-rental-primary">
+          <a to="/privacy" class="hover:text-[#1A1F2C]">
             Privacy
           </a>
           <span>|</span>
-          <a to="/faqs" class="hover:text-rental-primary">
+          <a to="/faqs" class="hover:text-[#1A1F2C]">
             FAQs
           </a>
         </div>
